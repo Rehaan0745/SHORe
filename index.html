@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SHOЯe 5th Edition · New Beginnings · GITAM Visakhapatnam</title>
-<meta name="description" content="Shore 5th Edition — 18, 19, 20 December 2026. Technical, Cultural, Management and Sports. Organised by GITAM Visakhapatnam.">
+<meta name="description" content="SHOЯe 5th Edition — 18, 19, 20 December 2026. Technical, Cultural, Management and Sports. Organised by GITAM Visakhapatnam.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#F9E4D1">
+<script>(function(){var d=document.documentElement,v=null;try{v=localStorage.getItem('shore-theme')}catch(e){}var h=new Date().getHours(),a=h>=6&&h<18?'day':'night',m=(v==='day'||v==='night')?v:'auto';d.dataset.theme=m==='auto'?a:m;d.dataset.mode=m})();</script>
+<link rel="icon" href="Assests/Shore%20Logo.png">
+<meta property="og:image" content="Assests/Shore%20Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Cardo:ital,wght@0,400;0,700;1,400&family=Noto+Serif:wght@700&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 /* ROXBOROUGH CF: drop your licensed font files into assets/fonts/ — Cardo is the automatic fallback */
 @font-face{font-family:"Roxborough CF";src:url("assets/fonts/RoxboroughCF-Regular.woff2") format("woff2"),url("assets/fonts/RoxboroughCF-Regular.otf") format("opentype");font-weight:400;font-display:swap}
@@ -16,7 +20,7 @@
 :root{
   --sand:#E7C69E; --blue:#162E9C; --cream:#F9E4D1; --lime:#E7C69E; --gold:#88C2F9;
   --ink:#0b1659; --deep:#0a1038;
-  --serif:"Roxborough CF","Cardo",Georgia,serif;
+  --serif:"Roxborough CF","Cardo","Noto Serif",Georgia,serif;
   --sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.2,.8,.2,1);
 }
@@ -33,7 +37,7 @@ a{color:inherit;text-decoration:none}
 .loader.done{transform:translateY(-100%)}
 .loader b{font:400 clamp(3rem,10vw,7rem)/1 var(--serif);letter-spacing:-.02em;animation:rise 1s var(--ease) both}
 .loader small{display:block;text-align:center;margin-top:1rem;letter-spacing:.4em;font-size:.7rem;text-transform:uppercase;opacity:.7;animation:rise 1s var(--ease) .2s both}
-@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:max(1rem,env(safe-area-inset-top)) 0 1rem;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
@@ -84,15 +88,15 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem
 .hero .eyebrow{display:flex;gap:1rem;align-items:center;margin-bottom:1.6rem}
 .hero .eyebrow::before{content:"";width:48px;height:2px;background:var(--blue)}
 /* Beach shore painted through the letters: deep sea > shallows > lapping foam > sand */
-.mask{font:700 clamp(5rem,24vw,19rem)/.85 var(--serif);letter-spacing:-.04em}
+.mask{font:700 clamp(3.4rem,10vw,8.6rem)/.85 var(--serif);letter-spacing:-.04em}
 .mask .line{display:block;overflow:hidden;padding:.06em .04em .14em}
 .mask .w{display:inline-block;transform:translateY(110%) rotate(3deg);opacity:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10Q15 3 30 10T60 10T90 10T120 10' fill='none' stroke='%23F9E4D1' stroke-width='2.6'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10Q15 2 30 10T60 10T90 10T120 10V20H0Z' fill='%23E7C69E'/%3E%3C/svg%3E"),linear-gradient(#E7C69E,#F7E4D0),linear-gradient(180deg,#6fb0f5 0%,#88C2F9 30%,#b9dcff 48%,#dff0ff 64%);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10Q15 3 30 10T60 10T90 10T120 10' fill='none' stroke='%23F9E4D1' stroke-width='2.6'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10Q15 2 30 10T60 10T90 10T120 10V20H0Z' fill='%23E7C69E'/%3E%3C/svg%3E"),linear-gradient(#E7C69E,#F7E4D0),linear-gradient(180deg,var(--m1) 0%,var(--m2) 30%,var(--m3) 48%,var(--m4) 64%);
   background-repeat:repeat-x,repeat-x,no-repeat,no-repeat;
   background-size:3em .22em,3em .24em,100% 100%,100% 100%;
   background-position:0 .44em,0 .5em,0 .74em,0 0;
   -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
-  animation:wordIn 1.4s var(--ease) 1.1s forwards,tide 9s linear infinite}
+  -webkit-text-stroke:var(--tw) #152E9C;animation:wordIn 1.4s var(--ease) 1.1s forwards,tide 9s linear infinite}
 @keyframes tide{to{background-position:3em .44em,-3em .5em,0 .74em,0 0}}
 .theme-line{font:italic 400 clamp(1.5rem,3.6vw,2.8rem)/1 var(--serif);margin-top:.5rem;opacity:0;animation:rise 1.2s var(--ease) 1.7s forwards}
 @keyframes wordIn{to{transform:none;opacity:1}}
@@ -192,7 +196,7 @@ footer{background:var(--deep);color:var(--cream);padding:5rem 0 2rem;position:re
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .mask .w{opacity:1;transform:none}.rv{opacity:1;transform:none}.hero-sub,.theme-line{opacity:1}.loader{display:none}
+  .mask .w{opacity:1;transform:none}.rv{opacity:1;transform:none}.hero-sub,.theme-line,.script,.fx{opacity:1}.loader{display:none}
 }
 
 /* ===== v3: marble palette, ripples, countdown, verticals, schedule ===== */
@@ -260,18 +264,136 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
 .bar{height:3px;background:rgba(136,194,249,.2);margin-top:1.4rem;overflow:hidden}
 .bar u{display:block;height:100%;width:35%;background:linear-gradient(90deg,transparent,#88C2F9,#F9E4D1);animation:load 2.4s ease-in-out infinite}@keyframes load{from{transform:translateX(-100%)}to{transform:translateX(300%)}}
 @media(max-width:900px){.hud{grid-template-columns:1fr}}
+.hvbar{display:flex;align-items:flex-end;gap:2.5rem;margin-top:3rem;padding:2rem 2.5rem 0;border:1px solid rgba(136,194,249,.4);background:linear-gradient(90deg,rgba(42,82,214,.55),rgba(7,12,43,.2));overflow:hidden}
+.hv{height:clamp(240px,28vw,360px);width:auto;flex:none;filter:drop-shadow(0 0 1.5px rgba(249,228,209,.9)) drop-shadow(0 0 40px rgba(136,194,249,.5));animation:float 5.5s ease-in-out infinite}
+.hvbar>div{align-self:center;padding-bottom:2rem}.hvbar h3{font:400 clamp(2.2rem,5.4vw,4.6rem)/1 var(--serif);letter-spacing:-.02em;margin:.8rem 0}.hvbar h3 em{color:#88C2F9}.hvbar p{opacity:.8;max-width:26rem}
+footer{overflow:hidden}.fg{position:absolute;right:max(3vw,1rem);bottom:4.5rem;height:clamp(170px,24vw,320px);width:auto;z-index:2;filter:drop-shadow(0 0 1.5px rgba(249,228,209,.9));animation:float 6s ease-in-out infinite}
+@media(max-width:700px){.hvbar{flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1.2rem 0}.hvbar>div{padding-bottom:0;order:-1}.fg{height:140px;bottom:6rem}}
+
+/* ===== v4: day / night theming + new hero scene ===== */
+:root{--bg:#F9E4D1;--bg2:#fff8ef;--fg:#152E9C;--em:#3a62e6;--line:rgba(21,46,156,.2);--hfg:#0d2278;--chip-bg:#152E9C;--chip-fg:#F9E4D1;
+--m1:#152E9C;--m2:#2a52d6;--m3:#5f9df0;--m4:#88C2F9;--tw:.012em;--w1:rgba(255,255,255,.6);--w2:#E7C69E;--sea-bg:linear-gradient(180deg,#e6f2ff,#b3d8ff);
+--card-bg:rgba(255,255,255,.62);--card-fg:#152E9C;--card-bd:rgba(21,46,156,.22);--ic:#152E9C;--crowd:#0b1b70;--rev:linear-gradient(180deg,#2a52d6,#6fb0f5);
+--palm:#1b3aa8;--hill:#8dbbf2;--pass-bg:#88C2F9;--pass-fg:#152E9C;--ring:rgba(21,46,156,.16);--mq:#E7C69E;--mqfg:#152E9C;--eh1:#152E9C;--eh2:#3a62e6}
+html[data-theme=night]{--bg:#060b2e;--bg2:#070d33;--fg:#F9E4D1;--em:#88C2F9;--line:rgba(249,228,209,.18);--hfg:#F9E4D1;--chip-bg:#F9E4D1;--chip-fg:#152E9C;
+--m1:#6fb0f5;--m2:#88C2F9;--m3:#b9dcff;--m4:#dff0ff;--tw:0em;--w1:#1c3fb8;--sea-bg:linear-gradient(180deg,#060b2e,#0a1558);
+--card-bg:rgba(249,228,209,.07);--card-fg:#F9E4D1;--card-bd:rgba(249,228,209,.22);--ic:#88C2F9;--crowd:#03061c;--rev:linear-gradient(180deg,#0a1558,#14299a);
+--palm:#050b30;--hill:#0a1648;--pass-bg:#0d1a66;--pass-fg:#F9E4D1;--ring:rgba(249,228,209,.14);--mq:#0d1a66;--mqfg:#E7C69E;--eh1:#F9E4D1;--eh2:#E7C69E}
+html.tt *,html.tt *::before,html.tt *::after{transition:background-color .9s ease,color .9s ease,border-color .9s ease,fill .9s ease,stroke .9s ease,opacity 1.2s ease!important}
+body{background:var(--bg);color:var(--fg)}
+nav{color:var(--hfg)}nav.stuck{color:var(--fg);background:rgba(249,228,209,.84)}html[data-theme=night] nav.stuck{background:rgba(6,11,46,.84)}
+nav:not(.stuck) .cta,html[data-theme=night] .cta{background:var(--chip-bg);color:var(--chip-fg)}
+html[data-theme=night] .dd-menu{background:#0b1550;color:var(--cream)}html[data-theme=night] .dd-menu a:hover{background:rgba(136,194,249,.2)}
+.nav-end{display:flex;align-items:center;gap:.4rem}
+.tg{position:relative;width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;overflow:hidden;transition:transform .4s var(--ease)}
+.tg:hover{transform:rotate(25deg) scale(1.06)}
+.tg svg{position:absolute;inset:0;margin:auto;width:20px;height:20px;transition:transform .7s var(--ease),opacity .5s}
+html[data-theme=day] .i-sun,html[data-theme=night] .i-moon{opacity:0;transform:rotate(-90deg) scale(.3)}
+nav:has(.links.open) .tg{color:var(--cream);position:relative;z-index:2}
+
+.hero{background:none;color:var(--hfg);padding:9rem 0 15rem}
+.scene{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.scene>*{position:absolute}
+.seab>*{position:absolute}.sky,.seab>*{inset:0}.sky{width:100%;height:100%}
+.sk-d{background:linear-gradient(180deg,#5fa8f5 0%,#a8d4ff 52%,#F9E4D1 100%)}
+.sk-n{background:linear-gradient(180deg,#02051a 0%,#0a1a66 55%,#2748c0 100%);opacity:0;transition:opacity 1.4s}
+html[data-theme=night] .sk-n{opacity:1}
+.stars{inset:0 0 45% 0;opacity:0;transition:opacity 1.4s}html[data-theme=night] .stars{opacity:1}
+.stars i{position:absolute;border-radius:50%;background:#F9E4D1;animation:tw 3.5s ease-in-out infinite}@keyframes tw{50%{opacity:.2}}
+.orb{right:7%;top:7%;width:min(36vw,470px);aspect-ratio:1;border-radius:50%;transition:opacity 1.4s,transform 1.6s var(--ease)}
+.o-sun{background:radial-gradient(circle,#fff 0 18%,#fff6ea 32%,rgba(255,244,230,.55) 52%,transparent 70%);animation:glow 7s ease-in-out infinite alternate}
+@keyframes glow{to{transform:scale(1.08)}}
+.o-moon{background:radial-gradient(circle at 35% 35%,#fff3e3,#E7C69E 68%,#c4a070);box-shadow:0 0 90px 24px rgba(231,198,158,.3);-webkit-mask:radial-gradient(circle at 74% 30%,transparent 58%,#000 59%);mask:radial-gradient(circle at 74% 30%,transparent 58%,#000 59%);opacity:0;transform:translateY(40%)}
+html[data-theme=night] .o-moon{opacity:1;transform:none}html[data-theme=night] .o-sun{opacity:0;transform:translateY(45%)}
+.hills{left:0;right:0;bottom:38%;width:100%;height:24%;fill:var(--hill);transition:fill 1.2s}
+.city{right:0;bottom:38%;width:58%;height:7%;opacity:0;transition:opacity 1.4s}html[data-theme=night] .city{opacity:1}
+.city i{position:absolute;width:3px;height:3px;border-radius:50%;background:#E7C69E;box-shadow:0 0 6px 2px rgba(231,198,158,.7);animation:tw 4s ease-in-out infinite}
+.seab{left:0;right:0;bottom:0;height:40%}.seab::before{content:"";position:absolute;left:0;right:0;top:-1px;height:40px;z-index:2;background:linear-gradient(rgba(130,170,255,.28),transparent)}
+.sea-d{background:linear-gradient(#6fb0f5,#2a6ce0 60%,#1b4fc4)}
+.sea-n{background:linear-gradient(#0b2a8f,#050f45 70%,#030830);opacity:0;transition:opacity 1.4s}html[data-theme=night] .sea-n{opacity:1}
+.glint{left:auto;right:10%;width:14%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.55) 0 2px,transparent 2px 10px);-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);animation:shim 3s linear infinite}
+html[data-theme=night] .glint{background:repeating-linear-gradient(180deg,rgba(231,198,158,.6) 0 2px,transparent 2px 10px)}@keyframes shim{to{background-position:0 20px}}
+.palm{bottom:15%;width:min(17vw,210px);color:var(--palm);transition:color 1.2s}.p1{right:2%}.p2{right:13%;width:min(11vw,140px);transform:scaleX(-1);bottom:17%}
+.hero .wrap{position:relative;z-index:2}
+.hero .eyebrow{letter-spacing:.34em}
+.mask .line:nth-child(2) .w{animation-delay:1.35s,-3s}
+.script{font:italic 400 clamp(2.4rem,6vw,4.8rem)/1.1 "Pinyon Script","Cardo",cursive;margin:.2rem 0 1.4rem;opacity:0;animation:rise 1.2s var(--ease) 1.7s forwards}
+.tags{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;display:flex;gap:.9rem;flex-wrap:wrap}.tags i{opacity:.5;font-style:normal}
+.fx{opacity:0;animation:rise 1.2s var(--ease) 1.9s forwards}
+.hero-act{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2rem;border-radius:99px;font-weight:600;border:1.5px solid transparent;transition:transform .4s var(--ease),background .3s,color .3s}
+.btn:hover{transform:translateY(-3px)}.btn.sand{background:#E7C69E;color:#0a1550}.btn.ghost{border-color:currentColor}.btn.ghost:hover{background:var(--hfg);color:var(--bg)}
+.dates div{background:var(--chip-bg);color:var(--chip-fg)}
+.side{right:1rem;top:50%;writing-mode:vertical-rl;transform:translateY(-50%);z-index:2;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--hfg);opacity:.8}
+.gitphin{height:min(56vh,540px);right:max(5vw,2rem)}
+.waves .a path{fill:var(--w1)}.waves .b path{fill:var(--w2)}.waves .c path{fill:var(--bg2)}
+@media(max-width:900px){.side{display:none}}
+@media(max-width:700px){.hero{padding-bottom:20rem}.gitphin{height:30vh;right:-.5rem}}
+
+.stats{background:var(--bg2);color:var(--fg);padding:2.4rem 0;border-bottom:1px solid var(--line);position:relative;z-index:3}
+.st{display:flex;flex-wrap:wrap;gap:1.4rem 0}
+.s{flex:1 1 190px;display:flex;align-items:center;gap:.9rem;padding:0 1.2rem;border-left:1px solid var(--line)}.s:first-child{border:0}
+.s svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--em);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.s b{display:block;font:600 1.5rem/1.1 var(--sans)}.s span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+@media(max-width:700px){.s{flex-basis:45%;border:0}}
+
+.sea{background:var(--sea-bg);color:var(--fg)}.sea .sec-head h2 em{color:var(--em)}
+.exp-head{text-align:center;position:relative;margin-bottom:3.2rem}
+.exp-head .eyebrow{letter-spacing:.42em;opacity:.8}
+.exp-head h2{font:400 clamp(2.6rem,7vw,5.4rem)/1.05 var(--serif);letter-spacing:-.02em;margin:1rem 0;background:linear-gradient(90deg,var(--eh1),var(--eh2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.exp-head p{max-width:36rem;margin:0 auto;opacity:.88}
+.peek{position:absolute;right:0;bottom:-1rem;height:210px;margin:0}
+@media(max-width:1100px){.peek{display:none}}
+.verts .v,.verts .v:nth-child(n){background:var(--card-bg);color:var(--card-fg);border-color:var(--card-bd)}
+.v{min-height:310px}.v h3{font:600 1.3rem/1.1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.v small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin:.6rem 0 1.1rem;opacity:.85}
+.ic{stroke:var(--ic)}.v::after{background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(136,194,249,.05) 3px 4px)}
+@media(max-width:1000px){.v{min-height:260px}}
+
+.reveal{position:relative;overflow:hidden;isolation:isolate;background:var(--rev);color:#F9E4D1;padding:6rem 0 12rem}
+.reveal .eyebrow{letter-spacing:.4em;opacity:.85}
+.reveal h2{font:400 clamp(2.6rem,6.4vw,5.4rem)/.98 var(--serif);letter-spacing:-.02em;margin-top:1rem}
+.rvw{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.rvr{max-width:23rem}.rvr p{margin-bottom:1.4rem}
+.beams{position:absolute;inset:-10% 0 0;z-index:-2;transform-origin:50% 0;background:conic-gradient(from 190deg at 50% 0,transparent 0 6deg,rgba(190,220,255,.3) 14deg,transparent 24deg 48deg,rgba(190,220,255,.24) 58deg,transparent 68deg 92deg,rgba(190,220,255,.3) 102deg,transparent 112deg);animation:sweep 9s ease-in-out infinite alternate}
+@keyframes sweep{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.crowd{position:absolute;left:0;bottom:0;width:100%;height:46%;z-index:-1;fill:var(--crowd);stroke:var(--crowd);transition:fill 1.2s,stroke 1.2s}
+.swoosh{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:170px;z-index:1}
+.swoosh .s1{fill:#2a52d6;opacity:.85}.swoosh .s2{fill:#E7C69E}.swoosh .s3{fill:var(--bg)}
+
+.light{background:var(--bg);color:var(--fg)}.light .sec-head h2 em{color:var(--em)}
+.marq{background:var(--mq);color:var(--mqfg)}
+.passband{background:var(--pass-bg);color:var(--pass-fg)}
+html[data-theme] .pb .cta{background:var(--pass-fg);color:var(--pass-bg)}
+html[data-theme=night] .pb h2 em{color:#88C2F9;text-shadow:none}
+.begin{background:var(--bg);color:var(--fg)}.rings span{border-color:var(--ring)}
+html[data-theme=night] .begin h2 em{background-image:linear-gradient(100deg,#88C2F9,#F9E4D1 50%,#88C2F9)}
+.thm button{background:none;border:0;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;opacity:.8}.thm button[aria-pressed=true]{color:#88C2F9;opacity:1;font-weight:700}
+
+/* v4.1 hero fit */
+.mask .line{padding:.02em .04em .03em}
+.hero{justify-content:flex-start;padding:7.2rem 0 13rem;min-height:max(100svh,760px)}
+.hero .eyebrow{margin-bottom:1rem}
+.script{margin:.1rem 0 .8rem}
+.hero-act{margin:1.1rem 0 1.2rem}
+.dates{gap:.5rem}.dates div{padding:.55rem .9rem;min-width:66px;border-radius:16px}.dates b{font-size:1.7rem}
+.orb{width:min(30vw,400px);top:9%;right:9%}
+.nav-end{margin-left:.3rem}.links>a.cta{white-space:nowrap;padding:.7rem 1.3rem}
+.side{position:absolute;right:.6rem;top:56%;font-size:.66rem}
+.gitphin{bottom:12%;height:min(52vh,500px)}
+@media(max-width:700px){.hero{padding-bottom:17rem}.mask{font-size:clamp(3.2rem,17vw,5.6rem)}}
+@media(max-width:700px){.gitphin{height:200px;bottom:2.5rem;right:-.3rem}.hero{padding-bottom:17rem}.hero-act{flex-direction:row}.btn{padding:.9rem 1.4rem}.hero-act{margin-bottom:.8rem}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="liquid" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".008 .012" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" dur="20s" values=".008 .012;.013 .008;.008 .012" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="110" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 
-<div class="loader" id="loader" aria-hidden="true"><div style="text-align:center"><img src="Assests/shore-logo.webp" alt=""><small>5th Edition · New Beginnings</small></div></div>
+<div class="loader" id="loader" aria-hidden="true"><div style="text-align:center"><img src="Assests/Shore%20Logo.png" alt=""><small>5th Edition · New Beginnings</small></div></div>
 
 <nav id="nav">
   <div class="wrap">
-    <a href="index.html" class="logo" aria-label="Shore home">
-      <!-- LOGO: replace the text below with <img src="assets/logo.png" alt="Shore"> once you tell me the file path -->
-      <img src="Assests/shore-logo.webp" width="640" height="640" alt="Shore Fest">
+    <a href="index.html" class="logo" aria-label="SHOЯe home">
+      <img src="Assests/Shore%20Logo.png" width="640" height="640" alt="SHOЯe Fest">
     </a>
     <div class="links" id="links">
       <div class="dd">
@@ -290,55 +412,76 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
       <a href="Passes.html">Passes</a>
       <a href="Signin.html" class="cta">Sign in</a>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><i></i><i></i></button>
+    <div class="nav-end"><button class="tg" id="tg" aria-pressed="false" aria-label="Switch theme" title="Day / Night"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg></button><button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><i></i><i></i></button></div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="sun" aria-hidden="true"></div>
-  <img class="gitphin" src="Assests/gitphin-cheer.webp" width="777" height="1000" alt="Gitphin, the Shore mascot, cheering with arms raised">
+  <div class="scene" aria-hidden="true">
+    <div class="sky sk-d"></div><div class="sky sk-n"></div><div class="stars" id="stars"></div>
+    <div class="orb o-sun"></div><div class="orb o-moon"></div>
+    <svg class="hills" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M0 400V300C150 250 250 290 400 245S650 205 800 235 1100 140 1250 185 1400 165 1440 150V400Z"/></svg>
+    <div class="city" id="city"></div>
+    <div class="seab"><div class="sea-d"></div><div class="sea-n"></div><div class="glint"></div></div>
+    <svg width="0" height="0" style="position:absolute"><symbol id="palm" viewBox="0 0 200 320"><path d="M104 320C100 250 108 170 96 90" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><g fill="currentColor"><path d="M96 90C70 50 30 50 6 78C40 66 72 76 96 90Z"/><path d="M96 90C60 90 20 110 4 150C40 120 70 106 96 90Z"/><path d="M96 90C122 50 162 50 190 80C154 66 120 76 96 90Z"/><path d="M96 90C130 92 170 112 190 152C154 122 126 106 96 90Z"/><path d="M96 90C88 50 96 22 120 6C110 36 104 62 96 90Z"/></g></symbol></svg>
+    <svg class="palm p1" viewBox="0 0 200 320"><use href="#palm"/></svg><svg class="palm p2" viewBox="0 0 200 320"><use href="#palm"/></svg>
+  </div>
+  <img class="gitphin" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-cheers.webp" width="777" height="1000" alt="Gitphin, the SHOЯe mascot, cheering with arms raised">
+  <div class="side" aria-hidden="true">Same Campus · Bigger Horizons</div>
   <div class="wrap">
     <div class="eyebrow">GITAM Visakhapatnam · 5th Edition</div>
-    <h1 class="mask" aria-label="Shore"><span class="line" aria-hidden="true"><span class="w">Shore</span></span></h1>
-    <p class="theme-line">New Beginnings</p>
-    <div class="hero-sub">
-      <p><em>Shore</em> returns for its fifth edition, where the tide turns and something new begins.</p>
-      <div class="dates" aria-label="18, 19 and 20 December 2026">
-        <div><b>18</b><span>Dec</span></div><div><b>19</b><span>Dec</span></div><div><b>20</b><span>Dec</span></div>
-      </div>
-    </div>
+    <h1 class="mask" aria-label="SHOЯe Fest"><span class="line" aria-hidden="true"><span class="w">SHOЯe</span></span><span class="line" aria-hidden="true"><span class="w">Fest</span></span></h1>
+    <p class="script">New beginnings</p>
+    <p class="tags fx">Culturals <i>|</i> Sports <i>|</i> Management <i>|</i> Technology</p>
+    <div class="hero-act fx"><a class="btn sand" href="Passes.html">Get Passes <span aria-hidden="true">→</span></a><a class="btn ghost" href="Events.html">Explore Events</a></div>
+    <div class="dates fx" aria-label="18, 19 and 20 December 2026"><div><b>18</b><span>Dec</span></div><div><b>19</b><span>Dec</span></div><div><b>20</b><span>Dec</span></div></div>
   </div>
   <div class="waves" aria-hidden="true">
-    <svg class="a" viewBox="0 0 2880 300" preserveAspectRatio="none"><path fill="#88C2F9" fill-opacity=".5" d="M0 150C240 70 480 70 720 150S1200 230 1440 150C1680 70 1920 70 2160 150S2640 230 2880 150V300H0Z"/></svg>
-    <svg class="b" viewBox="0 0 2880 300" preserveAspectRatio="none"><path fill="#E7C69E" fill-opacity=".9" d="M0 190C240 120 480 260 720 190S1200 120 1440 190C1680 260 1920 120 2160 190S2640 260 2880 190V300H0Z"/></svg>
-    <svg class="c" viewBox="0 0 2880 300" preserveAspectRatio="none"><path fill="#F9E4D1" d="M0 230C240 190 480 270 720 230S1200 190 1440 230C1680 270 1920 190 2160 230S2640 270 2880 230V300H0Z"/></svg>
+    <svg class="a" viewBox="0 0 2880 300" preserveAspectRatio="none"><path d="M0 150C240 70 480 70 720 150S1200 230 1440 150C1680 70 1920 70 2160 150S2640 230 2880 150V300H0Z"/></svg>
+    <svg class="b" viewBox="0 0 2880 300" preserveAspectRatio="none"><path d="M0 190C240 120 480 260 720 190S1200 120 1440 190C1680 260 1920 120 2160 190S2640 260 2880 190V300H0Z"/></svg>
+    <svg class="c" viewBox="0 0 2880 300" preserveAspectRatio="none"><path d="M0 230C240 190 480 270 720 230S1200 190 1440 230C1680 270 1920 190 2160 230S2640 270 2880 230V300H0Z"/></svg>
   </div>
 </header>
 
+<section class="stats" aria-label="SHOЯe at a glance"><div class="wrap st">
+  <div class="s"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b data-to="3">3</b><span>Days</span></div></div>
+  <div class="s"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 14c3 0 6 1.5 6 5"/></svg><div><b data-to="100" data-suf="+">100+</b><span>Events</span></div></div>
+  <div class="s"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 4-8 8-8s8 3 8 8"/></svg><div><b data-to="16" data-suf="K+">16K+</b><span>Campus Community</span></div></div>
+  <div class="s"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.500 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b data-to="10" data-suf="K+">10K+</b><span>Vizag Youth</span></div></div>
+  <div class="s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18"/></svg><div><b>Pan India</b><span>&amp; International crowd</span></div></div>
+</div></section>
+
+
+<section class="sea" id="verticals-sec">
+  <div class="wrap">
+    <div class="exp-head rv" id="verticals"><div class="eyebrow">Experience the SHOЯe</div><h2>More than a Fest</h2><p>A celebration of people, ideas and endless possibilities. Culturals, sports, management and technology come together on one spectacular shore.</p>
+      <img class="peek" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-pointing.webp" width="835" height="1000" loading="lazy" alt="Gitphin pointing towards the event verticals"></div>
+    <div class="verts">
+      <a class="v rv" href="Cultural.html"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M26 44V16l22-6v28"/><circle cx="20" cy="44" r="6"/><circle cx="42" cy="38" r="6"/></svg><div><h3>Culturals</h3><small>Music | Dance | Art | Literature</small><span class="go"><i>→</i></span></div></a>
+      <a class="v rv" href="Sports.html"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 12h24v12a12 12 0 0 1-24 0zM20 16h-8c0 8 4 12 10 12M44 16h8c0 8-4 12-10 12M32 36v10M22 52h20M26 46h12"/></svg><div><h3>Sports</h3><small>Tournaments | Fitness | Esports</small><span class="go"><i>→</i></span></div></a>
+      <a class="v rv" href="Management.html"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52h44M16 44V32M30 44V22M44 44V12M10 26l20-12 14 8 16-12"/></svg><div><h3>Management</h3><small>Ideas | Competitions | Leadership</small><span class="go"><i>→</i></span></div></a>
+      <a class="v rv" href="Technical.html"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="18" width="28" height="28" rx="4"/><path d="M26 10v8M38 10v8M26 46v8M38 46v8M10 26h8M10 38h8M46 26h8M46 38h8"/></svg><div><h3>Technology</h3><small>Innovation | Workshops | Exhibitions</small><span class="go"><i>→</i></span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" id="artists">
+  <div class="beams" aria-hidden="true"></div><svg class="crowd" id="crowd" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="wrap rvw">
+    <div class="rv"><div class="eyebrow">Artist Reveal</div><h2>Big names.<br>Bigger nights.</h2></div>
+    <div class="rv rvr"><p>Stay tuned for our headline artist.<br>It's going to be unforgettable.</p><a class="btn sand" href="Artists.html">Join the Reveal <span aria-hidden="true">→</span></a></div>
+  </div>
+  <svg class="swoosh" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path class="s1" d="M0 120C240 40 480 190 760 120S1200 40 1440 110V220H0Z"/><path class="s2" d="M0 150C300 90 520 210 820 150S1220 90 1440 150V220H0Z"/><path class="s3" d="M0 190C320 150 560 220 860 190S1240 150 1440 185V220H0Z"/></svg>
+</section>
+
 <section class="light" id="countdown">
   <div class="wrap">
-    <div class="sec-head rv"><h2>The tide is <em>coming in.</em></h2><p>Until the first wave of Shore 5th Edition reaches the campus shore on 18 December 2026.</p></div>
+    <div class="sec-head rv"><h2>The tide is <em>coming in.</em></h2><p>Until the first wave of SHOЯe 5th Edition reaches the campus shore on 18 December 2026.</p></div>
     <div class="cd rv" role="timer" aria-label="Countdown to 18 December 2026">
       <div class="tile"><i class="mb"></i><b id="d">00</b><span>Days</span></div>
       <div class="tile"><i class="mb"></i><b id="h">00</b><span>Hours</span></div>
       <div class="tile"><i class="mb"></i><b id="m">00</b><span>Minutes</span></div>
       <div class="tile"><i class="mb"></i><b id="s">00</b><span>Seconds</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sea" id="verticals-sec">
-  <div class="wrap">
-    <div class="sec-head rv" id="verticals">
-      <h2>Four <em>currents.</em> One shore.</h2>
-      <p>Choose your vertical and dive in.</p>
-      <img class="peek" src="Assests/gitphin-point.webp" width="835" height="1000" loading="lazy" alt="Gitphin pointing towards the event verticals">
-    </div>
-    <div class="verts">
-      <a class="v rv" href="Technical.html"><span class="n">01</span><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="18" width="28" height="28" rx="4"/><path d="M26 10v8M38 10v8M26 46v8M38 46v8M10 26h8M10 38h8M46 26h8M46 38h8"/></svg><div><h3>Technical</h3><p>Code, build, and engineer what comes next.</p><span class="go">Explore <i>→</i></span></div></a>
-      <a class="v rv" href="Cultural.html"><span class="n">02</span><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M26 44V16l22-6v28"/><circle cx="20" cy="44" r="6"/><circle cx="42" cy="38" r="6"/></svg><div><h3>Cultural</h3><p>Stage, rhythm, colour and expression.</p><span class="go">Explore <i>→</i></span></div></a>
-      <a class="v rv" href="Management.html"><span class="n">03</span><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52h44M16 44V32M30 44V22M44 44V12M10 26l20-12 14 8 16-12"/></svg><div><h3>Management</h3><p>Strategy, leadership and bold decisions.</p><span class="go">Explore <i>→</i></span></div></a>
-      <a class="v rv" href="Sports.html"><span class="n">04</span><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c-10 10-10 34 0 44M32 10c10 10 10 34 0 44"/></svg><div><h3>Sports</h3><p>Energy, endurance and the spirit of play.</p><span class="go">Explore <i>→</i></span></div></a>
     </div>
   </div>
 </section>
@@ -349,12 +492,14 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
   <div class="wrap">
     <div class="sec-head rv"><div><div class="eyebrow">// Schedule · syncing</div><h2 style="margin-top:1rem">Three days. <em>One</em> beginning.</h2></div><p>Tech Fest, Cultural events and High Voltage Nights with DJs and artists. The full day-wise lineup lands here soon.</p></div>
     <div class="hud"><article class="pan rv"><header><b>18</b><span>DEC 2026<br>DAY 01</span></header><ul><li><i class="dot"></i>Tech Fest<small>TBA</small></li><li><i class="dot"></i>Cultural<small>TBA</small></li><li><i class="dot"></i>High Voltage Night · DJ &amp; Artists<small>TBA</small></li></ul><div class="bar"><u></u></div></article><article class="pan rv"><header><b>19</b><span>DEC 2026<br>DAY 02</span></header><ul><li><i class="dot"></i>Tech Fest<small>TBA</small></li><li><i class="dot"></i>Cultural<small>TBA</small></li><li><i class="dot"></i>High Voltage Night · DJ &amp; Artists<small>TBA</small></li></ul><div class="bar"><u></u></div></article><article class="pan rv"><header><b>20</b><span>DEC 2026<br>DAY 03</span></header><ul><li><i class="dot"></i>Tech Fest<small>TBA</small></li><li><i class="dot"></i>Cultural<small>TBA</small></li><li><i class="dot"></i>High Voltage Night · DJ &amp; Artists<small>TBA</small></li></ul><div class="bar"><u></u></div></article></div>
+
+    <div class="hvbar rv"><img class="hv" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-yoyo.webp" width="595" height="1000" loading="lazy" alt="Gitphin in a cap and chain, ready for High Voltage Nights"><div><div class="eyebrow">// DJ &amp; Artists</div><h3>High Voltage <em>Nights</em></h3><p>The lineup is loading. Gitphin is already warming up.</p></div></div>
   </div>
 </section>
 
 <section class="passband" id="passes">
   <div class="wrap pb">
-    <img class="rv" src="Assests/gitphin-megaphone.webp" width="837" height="1000" loading="lazy" alt="Gitphin announcing through a megaphone">
+    <img class="rv" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-microphone.webp" width="837" height="1000" loading="lazy" alt="Gitphin announcing through a megaphone">
     <div class="rv">
       <div class="eyebrow">Passes</div>
       <h2>Don't just hear about it. <em>Be there.</em></h2>
@@ -366,10 +511,10 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
 <section class="begin" id="about">
   <div class="rings" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="wrap" style="position:relative">
-    <img class="machao rv" src="Assests/gitphin-machao.webp" width="563" height="1000" loading="lazy" alt="Gitphin shouting Shore Machao">
+    <img class="machao rv" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-shore-machao.webp" width="563" height="1000" loading="lazy" alt="Gitphin shouting SHOЯe Machao">
     <div class="eyebrow rv">The Theme</div>
     <h2 class="rv">Every shore is where a <em>new story</em> begins.</h2>
-    <p class="rv">Shore 5th Edition is organised by GITAM Visakhapatnam across Technical, Cultural, Management and Sports.</p>
+    <p class="rv">SHOЯe 5th Edition is organised by GITAM Visakhapatnam across Technical, Cultural, Management and Sports.</p>
     <p class="rv" style="margin-top:2.2rem"><a class="cta" href="Events.html" style="display:inline-block">Discover all events</a></p>
   </div>
 </section>
@@ -377,12 +522,13 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
 <footer id="contact">
   <div class="wrap">
     <div class="foot">
-      <div><h4>Shore 5th Edition</h4><p style="max-width:26rem;opacity:.8">New Beginnings · 18, 19, 20 December 2026<br>GITAM Visakhapatnam</p></div>
+      <div><h4>SHOЯe 5th Edition</h4><p style="max-width:26rem;opacity:.8">New Beginnings · 18, 19, 20 December 2026<br>GITAM Visakhapatnam</p></div>
       <div><h4>Explore</h4><ul><li><a href="Events.html">Events</a></li><li><a href="#verticals">Verticals</a></li><li><a href="Schedule.html">Schedule</a></li><li><a href="Artists.html">Artists</a></li><li><a href="Passes.html">Passes</a></li><li><a href="About.html">About Us</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>Contact details coming soon</li></ul></div>
     </div>
-    <div class="big" aria-hidden="true">Shore</div>
-    <div class="legal"><span>© 2026 Shore · GITAM Visakhapatnam</span><span>5th Edition</span></div>
+    <img class="fg" src="SHORe%20Mascot%20poses/SHORe%20Mascot%20poses/web/gitphin-namaste-cultural.webp" width="829" height="1000" loading="lazy" alt="Gitphin greeting with a namaste">
+    <div class="big" aria-hidden="true">SHOЯe</div>
+    <div class="legal"><span>© 2026 SHOЯe · GITAM Visakhapatnam</span><span class="thm">Theme: <button data-t="auto">Auto</button> · <button data-t="day">Day</button> · <button data-t="night">Night</button></span></div>
   </div>
 </footer>
 
@@ -415,7 +561,7 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
     size();addEventListener('resize',size);if(reduce)return;
     setInterval(function(){if(vis)add(Math.random()*w,Math.random()*h)},1200);
     (function loop(){if(vis){x.clearRect(0,0,w,h);R=R.filter(function(q){q.r+=1.2+q.r*.012;var k=1-q.r/q.m;if(k<=0)return false;
-      for(var i=0;i<3;i++){var rr=q.r-i*15;if(rr>0){x.beginPath();x.arc(q.x,q.y,rr,0,6.283);x.lineWidth=2.2-i*.6;x.strokeStyle='rgba(205,230,255,'+(q.a*k*(1-i*.3))+')';x.stroke()}}return true})}requestAnimationFrame(loop)})()}
+      for(var i=0;i<3;i++){var rr=q.r-i*15;if(rr>0){x.beginPath();x.arc(q.x,q.y,rr,0,6.283);x.lineWidth=2.2-i*.6;x.strokeStyle=(root.dataset.theme==='day'?'rgba(21,46,156,':'rgba(205,230,255,')+(q.a*k*(1-i*.3))+')';x.stroke()}}return true})}requestAnimationFrame(loop)})()}
   ripples(document.querySelector('.hero'));ripples(document.querySelector('.sea'));
   if(reduce)document.querySelectorAll('#liquid animate').forEach(function(a){a.remove()});
   // card tilt + spotlight
@@ -424,6 +570,29 @@ nav:not(.stuck) .cta{background:var(--cream);color:var(--blue)}
       v.style.setProperty('--mx',px*100+'%');v.style.setProperty('--my',py*100+'%');
       if(!reduce){v.style.setProperty('--rx',(.5-py)*10+'deg');v.style.setProperty('--ry',(px-.5)*12+'deg')}});
     v.addEventListener('pointerleave',function(){v.style.setProperty('--rx','0deg');v.style.setProperty('--ry','0deg')})});
+  // theme: auto by clock, or user choice
+  var root=document.documentElement,tg=document.getElementById('tg'),tm=document.querySelector('meta[name=theme-color]');
+  function auto(){var h=new Date().getHours();return h>=6&&h<18?'day':'night'}
+  function setTheme(t,m,save){root.classList.add('tt');root.dataset.theme=t;root.dataset.mode=m;
+    if(save){try{m==='auto'?localStorage.removeItem('shore-theme'):localStorage.setItem('shore-theme',t)}catch(e){}}
+    if(tm)tm.content=t==='night'?'#060b2e':'#F9E4D1';
+    tg.setAttribute('aria-label',t==='night'?'Switch to day mode':'Switch to night mode');tg.setAttribute('aria-pressed',t==='night');
+    document.querySelectorAll('[data-t]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===m)});
+    setTimeout(function(){root.classList.remove('tt')},1300)}
+  tg.addEventListener('click',function(){var n=root.dataset.theme==='night'?'day':'night';setTheme(n,n,true)});
+  document.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){var m=b.dataset.t;setTheme(m==='auto'?auto():m,m,true)})});
+  setInterval(function(){if(root.dataset.mode==='auto'&&auto()!==root.dataset.theme)setTheme(auto(),'auto',false)},300000);
+  setTheme(root.dataset.theme,root.dataset.mode,false);
+  // stars, city lights, crowd
+  function mk(host,n,fn){for(var i=0;i<n;i++){var e=document.createElement('i');e.style.cssText=fn();host.appendChild(e)}}
+  mk(document.getElementById('stars'),80,function(){var z=1+Math.random()*1.8;return 'left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:'+z+'px;height:'+z+'px;animation-delay:'+(-Math.random()*4)+'s'});
+  mk(document.getElementById('city'),90,function(){var x=Math.random()*100;return 'left:'+x+'%;bottom:'+Math.random()*(20+x*.6)+'%;animation-delay:'+(-Math.random()*4)+'s'});
+  (function(){var g='';for(var i=0;i<66;i++){var x=i*22+Math.random()*10,y=96+Math.random()*34;g+='<circle cx="'+x+'" cy="'+y+'" r="13" stroke-width="0"/><rect x="'+(x-17)+'" y="'+(y+11)+'" width="34" height="90" rx="14" stroke-width="0"/>';if(i%3===0)g+='<path d="M'+(x+9)+' '+(y+22)+'L'+(x+24)+' '+(y-36)+'" fill="none" stroke-width="9" stroke-linecap="round"/>'}
+    document.getElementById('crowd').innerHTML=g})();
+  // count-up stats
+  document.querySelectorAll('[data-to]').forEach(function(el){var to=+el.dataset.to,suf=el.dataset.suf||'';
+    new IntersectionObserver(function(es,o){if(!es[0].isIntersecting)return;o.disconnect();if(reduce)return;var t0=performance.now();
+      (function f(n){var k=Math.min(1,(n-t0)/1400);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+(k<1?'':suf);if(k<1)requestAnimationFrame(f)})(t0)}).observe(el)});
   // reveal
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');if(e.target.classList.contains('v'))setTimeout(function(t){t.style.transitionDelay='0s'},1600,e.target);io.unobserve(e.target)}})},{threshold:.15});
   document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(el.classList.contains('v')?(i%4)*.1:0)+'s';io.observe(el)});
