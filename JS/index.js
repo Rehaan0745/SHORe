@@ -42,7 +42,7 @@
   function setTheme(t,m,save){root.classList.add('tt');root.dataset.theme=t;root.dataset.mode=m;
     if(save){try{m==='auto'?localStorage.removeItem('shore-theme'):localStorage.setItem('shore-theme',t)}catch(e){}}
     if(tm)tm.content=t==='night'?'#060b2e':'#F9E4D1';
-    tg.setAttribute('aria-label',t==='night'?'Switch to day mode':'Switch to night mode');tg.setAttribute('aria-pressed',t==='night');
+    tg.setAttribute('aria-label',t==='night'?'Switch to day mode':'Switch to night mode');tg.setAttribute('aria-checked',t==='night');
     document.querySelectorAll('[data-t]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===m)});
     setTimeout(function(){root.classList.remove('tt')},3200)}
   tg.addEventListener('click',function(){var n=root.dataset.theme==='night'?'day':'night';setTheme(n,n,true)});
@@ -60,7 +60,7 @@
     new IntersectionObserver(function(es,o){if(!es[0].isIntersecting)return;o.disconnect();if(reduce)return;var t0=performance.now();
       (function f(n){var k=Math.min(1,(n-t0)/1400);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+(k<1?'':suf);if(k<1)requestAnimationFrame(f)})(t0)}).observe(el)});
   // optional real photos
-  (function(){var hero=document.querySelector('.hero'),ok=0;['day','night'].forEach(function(k){var i=new Image();i.onload=function(){if(++ok===2)hero.classList.add('photos')};i.src='Assets/hero-'+k+'.jpg'})})();
+  (function(){var hero=document.querySelector('.hero'),ok=0;['day','night'].forEach(function(k){var i=new Image();i.onload=function(){if(++ok===2)hero.classList.add('photos')};i.src='Assets/shore_'+k+'.jpg'})})();
   // reveal
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');if(e.target.classList.contains('v'))setTimeout(function(t){t.style.transitionDelay='0s'},1600,e.target);io.unobserve(e.target)}})},{threshold:.15});
   document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(el.classList.contains('v')?(i%4)*.1:0)+'s';io.observe(el)});
