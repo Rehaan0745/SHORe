@@ -1,1 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060A18">
+<title>SHORe 5th Edition — Sports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#060A18;--deep:#0A1030;--blue:#152E9B;--lift:#2544CE;--mist:#88C2F9;--sand:#E7C69E;--text:#EDF2FF;--muted:#A9B7DC;--dim:#6C7CA8;--line:rgba(237,242,255,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--abyss);color:var(--text);font-family:"Instrument Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 8% 10%,rgba(37,68,206,.3),transparent 30rem),radial-gradient(circle at 90% 55%,rgba(136,194,249,.12),transparent 28rem),radial-gradient(circle at 45% 100%,rgba(231,198,158,.1),transparent 30rem)}
+a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}
+.wrap{width:min(1240px,calc(100% - 36px));margin:auto}.mono{font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:.1em}
+nav{height:70px;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(6,10,24,.78);backdrop-filter:blur(18px);display:flex;align-items:center}
+.nav{display:flex;justify-content:space-between;align-items:center}.brand{display:flex;gap:11px;align-items:center;font:800 1.4rem Gabarito;letter-spacing:-.04em}.logo{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--mist),var(--sand));border:1px solid #ffffff44}.navmeta{font:10px "Space Mono";color:var(--dim);letter-spacing:.1em}
+.hero{min-height:650px;position:relative;display:flex;align-items:end;border-bottom:1px solid var(--line);overflow:hidden}.heroimg{position:absolute;inset:0;background:linear-gradient(90deg,#060a18f5 0%,#060a18bb 43%,#060a1825 100%),url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2200&q=90") center/cover}.heroimg:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--abyss),transparent 48%)}.hero .wrap{position:relative;padding:90px 0 65px}.eyebrow{font:10px "Space Mono";color:var(--mist);letter-spacing:.16em;margin-bottom:20px}.hero h1{font:800 clamp(4rem,11vw,9.2rem)/.82 Gabarito;letter-spacing:-.08em;margin:0}.hero h1 span{display:block;color:var(--sand)}.lead{max-width:600px;margin:28px 0 0;color:var(--muted);font-size:1.05rem;line-height:1.6}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}.pill{padding:9px 12px;border:1px solid #edf2ff22;border-radius:99px;background:#0a10308c;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:27px 22px;border-right:1px solid var(--line)}.stat b{display:block;font:700 2.15rem Gabarito;letter-spacing:-.05em}.stat span{font:9px "Space Mono";color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+.section{padding:76px 0}.head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:25px}.kicker{font:10px "Space Mono";color:var(--sand);letter-spacing:.13em;margin-bottom:9px}.head h2{font:700 clamp(2.5rem,5vw,4.6rem)/.9 Gabarito;letter-spacing:-.065em;margin:0}.head p{max-width:460px;color:var(--muted);line-height:1.55}
+.toolbar{position:sticky;top:70px;z-index:40;padding:11px 0;border-block:1px solid var(--line);background:#060a18d8;backdrop-filter:blur(18px)}.tools{display:flex;gap:8px}.search{flex:1}.search input{width:100%;height:46px;border:1px solid var(--line);border-radius:12px;background:#0f183cb8;color:var(--text);padding:0 14px;outline:0}.search input:focus{border-color:#88c2f977}.filters{display:flex;gap:7px;overflow:auto;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{height:46px;padding:0 13px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--muted);white-space:nowrap}.filter.active,.filter:hover{background:var(--mist);color:var(--abyss);border-color:var(--mist);font-weight:700}
+.resultline{display:flex;justify-content:space-between;color:var(--dim);font:9px "Space Mono";letter-spacing:.09em;text-transform:uppercase;margin-bottom:16px}
+.sport{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0a1030aa;margin-bottom:28px;box-shadow:0 18px 65px #00000022}.cover{min-height:205px;padding:25px;display:flex;align-items:flex-end;position:relative;background-size:cover;background-position:center}.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#060a18ed,#060a1880,#060a1820)}.cover>*{position:relative}.sporticon{font-size:31px}.tag{font:9px "Space Mono";color:var(--mist);letter-spacing:.12em;margin:7px 0}.sportname{font:700 clamp(2.2rem,4vw,3.6rem)/.9 Gabarito;letter-spacing:-.06em}.sportcount{margin-left:auto;align-self:flex-start;border:1px solid #fff2;border-radius:99px;padding:8px 10px;background:#060a1870;font:9px "Space Mono"}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}.card{border:0;color:inherit;text-align:left;background:#0a1030e8;padding:22px;min-height:185px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.card:hover{background:#152e9b40;transform:translateY(-2px)}.top{display:flex;justify-content:space-between;gap:10px}.id{font:9px "Space Mono";color:var(--dim)}.division{font-size:10px;text-transform:uppercase;padding:5px 8px;border-radius:99px;color:var(--sand);border:1px solid #e7c69e3d}.eventname{font:600 1.65rem Gabarito;letter-spacing:-.04em;margin-top:10px}.sub{color:var(--muted);font-size:12px;margin-top:4px}.bottom{display:flex;justify-content:space-between;align-items:end;margin-top:20px}.metrics{display:flex;gap:18px}.metric label{display:block;color:var(--dim);font:8px "Space Mono";text-transform:uppercase;margin-bottom:4px}.metric strong{font:600 1rem Gabarito}.detailbtn{border:0;background:var(--sand);color:var(--abyss);border-radius:9px;padding:9px 11px;font-weight:800;font-size:10px}
+.empty{text-align:center;padding:55px;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--dim);font:9px "Space Mono";letter-spacing:.08em;text-transform:uppercase}
+.modalback{display:none;position:fixed;inset:0;z-index:100;background:#000b;backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}.modalback.open{display:flex}.modal{width:min(700px,100%);max-height:90vh;overflow:auto;border:1px solid #fff2;border-radius:24px;background:linear-gradient(145deg,#101942,#080d20);box-shadow:0 35px 100px #000b}.modalpic{height:210px;background-size:cover;background-position:center;position:relative}.modalpic:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101942,transparent 70%)}.close{position:absolute;right:15px;top:15px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid #fff3;background:#060a1899;color:white;font-size:20px}.modalbody{padding:0 27px 28px}.modalbody .kicker{margin-top:2px}.modal h3{font:700 clamp(2.3rem,6vw,4rem)/.9 Gabarito;letter-spacing:-.065em;margin:8px 0 22px}.details{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid var(--line);border-top:1px solid var(--line)}.detail{padding:17px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.detail label{display:block;color:var(--dim);font:8px "Space Mono";text-transform:uppercase;margin-bottom:6px}.detail strong{font-size:14px}.note{margin-top:16px;padding:13px;border:1px solid #88c2f922;border-radius:11px;color:var(--muted);font-size:12px;line-height:1.5}
+.reveal{opacity:0;transform:translateY(16px);transition:.65s}.reveal.show{opacity:1;transform:none}
 
+
+/* Photography + single-event layout */
+.cover{min-height:255px;isolation:isolate;background:#0b1230;overflow:hidden}
+.sportphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.95;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .5s ease}
+.coverFallback{position:absolute;inset:0;z-index:-3;background:linear-gradient(135deg,#152e9b,#0a1030 55%,#e7c69e)}
+.coverContent{position:relative;z-index:2}
+.sport:hover .sportphoto{transform:scale(1.045);opacity:1}
+.cards.single{grid-template-columns:1fr}
+.cards.single .card{min-height:160px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:25px;align-items:center}
+.cards.single .bottom{margin-top:0;display:flex;flex-direction:column;align-items:flex-end;gap:15px}
+.cards.single .metrics{justify-content:flex-end}
+@media(max-width:650px){.cards.single .card{grid-template-columns:1fr}.cards.single .bottom{align-items:flex-start}.cover{min-height:220px}}
+
+/* SHORe motion layer — visible, layered, and intentionally fluid */
+#scrollProgress{position:fixed;left:0;top:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,var(--mist),var(--sand),var(--blue));box-shadow:0 0 18px #88c2f988;transform-origin:left}
+#liquidCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:.30;mix-blend-mode:screen}
+nav{position:sticky;z-index:20}.hero,.section,.stats,.toolbar,footer{position:relative;z-index:3}
+.heroimg{transform:scale(1.08);transition:transform 1.8s cubic-bezier(.2,.7,.2,1),filter 1.2s ease;will-change:transform}.hero.loaded .heroimg{transform:scale(1);filter:saturate(1.08)}
+.hero .wrap{z-index:4}.hero .eyebrow,.hero h1,.hero .lead,.hero .pills{opacity:0;transform:translateY(28px)}
+.hero.loaded .eyebrow{animation:rise .8s .05s cubic-bezier(.2,.8,.2,1) forwards}.hero.loaded h1{animation:rise 1s .15s cubic-bezier(.2,.8,.2,1) forwards}.hero.loaded .lead{animation:rise .85s .32s cubic-bezier(.2,.8,.2,1) forwards}.hero.loaded .pills{animation:rise .8s .47s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.stat{opacity:0;transform:translateY(24px) scale(.98);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.stats.visible .stat:nth-child(2){transition-delay:.08s}.stats.visible .stat:nth-child(3){transition-delay:.16s}.stats.visible .stat:nth-child(4){transition-delay:.24s}.stats.visible .stat{opacity:1;transform:none}
+.stat b{transition:transform .25s ease}.stat:hover b{transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(34px) scale(.985);filter:blur(2px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1),filter .8s ease}.reveal.show{opacity:1;transform:none;filter:none}
+.cover{position:relative;overflow:hidden;background:#0b1230;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease;will-change:transform}.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,#060a18e8 0%,#060a1855 48%,#060a1808 100%);z-index:0}.cover:after{content:"";position:absolute;inset:-25%;background:radial-gradient(circle at 20% 20%,#88c2f955,transparent 25%),radial-gradient(circle at 80% 80%,#e7c69e44,transparent 28%);opacity:.65;z-index:1;animation:driftGlow 9s ease-in-out infinite alternate}.coverContent,.sportcount{z-index:3!important}.sportphoto{z-index:-2;will-change:transform;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s ease,opacity .5s}.sport:hover .sportphoto{transform:scale(1.08);filter:saturate(1.12)}
+@keyframes driftGlow{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.08)}}
+.card{position:relative;overflow:hidden;will-change:transform;transition:transform .4s cubic-bezier(.2,.8,.2,1),background .35s ease,box-shadow .4s ease}.card:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,#ffffff08 45%,transparent 70%);transform:translateX(-120%);transition:transform .7s ease;pointer-events:none}.card:hover{transform:translateY(-7px);background:#152e9b4d;box-shadow:0 18px 45px #0005}.card:hover:after{transform:translateX(120%)}
+.card .detailbtn{transition:transform .25s ease,background .25s ease}.card:hover .detailbtn{transform:translateX(4px);background:var(--mist)}
+.cards.single .card{min-height:185px}.cards.single .card:hover{transform:translateY(-5px) scale(1.005)}
+.modalback.open .modal{animation:modalIn .42s cubic-bezier(.2,.8,.2,1)}@keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+.divisionSpotlight{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}.divisionHero{position:relative;min-height:165px;border:1px solid #ffffff18;border-radius:20px;overflow:hidden;text-align:left;padding:24px;background:#0a1030e8;color:var(--text);cursor:pointer;isolation:isolate;transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .5s;will-change:transform}.divisionHero:before{content:"";position:absolute;inset:-30%;z-index:-2;background:radial-gradient(circle at 75% 25%,#88c2f966,transparent 30%),linear-gradient(120deg,#0a1030,#152e9b99);animation:spotlightFloat 8s ease-in-out infinite alternate}.womenHero:before{background:radial-gradient(circle at 75% 25%,#e7c69e88,transparent 30%),linear-gradient(120deg,#0a1030,#2544ce99);animation-delay:-2s}.divisionHero:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-90px;bottom:-130px;background:linear-gradient(135deg,#88c2f966,#e7c69e22);filter:blur(3px);z-index:-1;transition:transform .9s}.divisionHero:hover{transform:translateY(-8px) scale(1.012);border-color:#88c2f955;box-shadow:0 24px 65px #0008}.divisionHero:hover:after{transform:scale(1.25) translate(-10px,-10px)}
+@keyframes spotlightFloat{from{transform:translate3d(-2%,-1%,0) rotate(-1deg)}to{transform:translate3d(3%,2%,0) rotate(1deg)}}
+.divisionCopy{display:flex;flex-direction:column;gap:5px}.divisionCopy small{font:9px "Space Mono";letter-spacing:.16em;color:var(--mist)}.divisionCopy strong{font:800 clamp(1.65rem,3.5vw,2.7rem)/.9 Gabarito;letter-spacing:-.045em}.divisionCopy em{font-style:normal;color:var(--muted);font:10px "Space Mono";margin-top:6px}.divisionArrow{position:absolute;right:20px;top:18px;font-size:25px;color:var(--sand);transition:transform .35s}.divisionHero:hover .divisionArrow{transform:translate(5px,-5px)}
+.divisionFilters{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.divisionFilter{border:1px solid #ffffff14;background:#0a1030aa;color:var(--muted);border-radius:999px;padding:9px 13px;font:9px "Space Mono";letter-spacing:.08em;cursor:pointer;transition:transform .25s,background .25s,color .25s}.divisionFilter:hover{transform:translateY(-2px);border-color:#ffffff35;color:var(--text)}.divisionFilter.active{background:#edf2ff;color:#060a18;border-color:#edf2ff}.divisionFilter.men.active{background:var(--mist)}.divisionFilter.women.active{background:var(--sand)}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:2}.card[data-division="Men"]:before{background:var(--mist)}.card[data-division="Women"]:before{background:var(--sand)}.card[data-division="Mixed"]:before{background:linear-gradient(var(--mist),var(--sand))}.card:hover:before{transform:scaleY(1)}
+.division.men{color:var(--mist);border-color:#88c2f933;background:#88c2f90d}.division.women{color:var(--sand);border-color:#e7c69e44;background:#e7c69e0d}.division.mixed{color:#dce5ff}.division.open{color:#c8d1ee}
+.divisionHero{animation:spotlightIn .75s both}.divisionHero:nth-child(2){animation-delay:.12s}@keyframes spotlightIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:800px){#liquidCanvas{opacity:.20}.divisionSpotlight{grid-template-columns:1fr}.divisionHero{min-height:145px}.cards{grid-template-columns:1fr}}
+@media(max-width:520px){.divisionHero{min-height:135px}.cover{min-height:220px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#liquidCanvas{display:none}.hero .eyebrow,.hero h1,.hero .lead,.hero .pills{opacity:1;transform:none}.heroimg{transform:none}.reveal,.stat{opacity:1;transform:none;transition:none}.modalback.open .modal{animation:none}}
+@media(max-width:800px){.wrap{width:calc(100% - 26px)}nav{height:62px}.navmeta{display:none}.hero{min-height:620px}.hero .wrap{padding:75px 0 50px}.stats{grid-template-columns:1fr 1fr}.stat{padding:20px 15px}.stat b{font-size:1.7rem}.section{padding:58px 0}.head{display:block}.head p{margin-top:14px}.toolbar{top:62px}.tools{display:block}.filters{margin-top:8px}.cards{grid-template-columns:1fr}.cover{min-height:180px}}
+@media(max-width:520px){.heroimg{background-position:65% center}.lead{font-size:.94rem}.eventname{font-size:1.45rem}.modalback{align-items:end;padding:0}.modal{border-radius:24px 24px 0 0;max-height:92vh}.modalpic{height:160px}.modalbody{padding:0 20px 23px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal,.stat,.hero .eyebrow,.hero h1,.hero .lead,.hero .pills{opacity:1!important;transform:none!important;filter:none!important}#liquidCanvas{display:none}.heroimg{transform:none!important}.divisionHero{opacity:1!important}}
+</style>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<canvas id="liquidCanvas" aria-hidden="true"></canvas>
+<nav><div class="wrap nav"><a class="brand" href="#"><span class="logo">S</span><span>SHORe</span></a><span class="navmeta">5TH EDITION · SPORTS · 18—20 DEC 2026</span></div></nav>
+
+<section class="hero">
+<div class="heroimg"></div>
+<div class="wrap">
+<div class="eyebrow">GITAM VISAKHAPATNAM · SPORTS VERTICAL</div>
+<h1>PLAY.<span>COMPETE.</span>SHORE.</h1>
+<p class="lead">Find your event. Know the essentials. Step into the sports line-up of SHORe 5th Edition.</p>
+<div class="pills"><span class="pill">18—20 DECEMBER 2026</span><span class="pill">34 EVENTS</span><span class="pill">₹4L TOTAL PRIZES</span></div>
+</div>
+</section>
+
+<div class="wrap"><div class="stats">
+<div class="stat"><b>34</b><span>Events</span></div><div class="stat"><b>12</b><span>Sports / Formats</span></div><div class="stat"><b data-count="400000" data-prefix="₹" data-suffix="L" data-scale="100000">₹4L</b><span>Total Prize Pool</span></div><div class="stat"><b>7</b><span>Venue IDs</span></div>
+</div></div>
+
+<section class="section wrap">
+<div class="head"><div><div class="kicker">THE EVENT LINE-UP</div><h2>Find your<br>game.</h2></div><p>Browse the official SHORe 2026 sports event master list. Search or filter by sport or division, then open any event for its registration basis, entry fee, prize pool and venue.</p></div>
+<div class="divisionSpotlight" aria-label="Division overview">
+  <button type="button" class="divisionHero menHero" data-division="Men"><span class="divisionOrb"></span><span class="divisionCopy"><small>COMPETE</small><strong>MEN'S EVENTS</strong><em id="menCount">0 events</em></span><span class="divisionArrow">↗</span></button>
+  <button type="button" class="divisionHero womenHero" data-division="Women"><span class="divisionOrb"></span><span class="divisionCopy"><small>COMPETE</small><strong>WOMEN'S EVENTS</strong><em id="womenCount">0 events</em></span><span class="divisionArrow">↗</span></button>
+</div>
+</section>
+
+<div class="toolbar"><div class="wrap tools"><div class="search"><input id="search" type="search" placeholder="Search events, sports or divisions…"></div><div class="filters" id="filters"></div><div class="divisionFilters" id="divisionFilters" aria-label="Filter by division">
+<button type="button" class="divisionFilter active" data-division="All">ALL</button>
+<button type="button" class="divisionFilter men" data-division="Men">MEN</button>
+<button type="button" class="divisionFilter women" data-division="Women">WOMEN</button>
+<button type="button" class="divisionFilter" data-division="Mixed">MIXED</button>
+<button type="button" class="divisionFilter" data-division="Open">OPEN</button>
+</div></div></div>
+
+<section class="section wrap" style="padding-top:28px"><div class="resultline"><span id="count"></span><span>SHORE 2026 MASTER LIST</span></div><div id="groups"></div></section>
+
+<div class="modalback" id="back"><div class="modal">
+<div class="modalpic" id="pic"><button class="close" id="close">×</button></div>
+<div class="modalbody"><div class="kicker" id="mk"></div><h3 id="mt"></h3><div class="details">
+<div class="detail"><label>Division</label><strong id="dv"></strong></div><div class="detail"><label>Registration</label><strong id="bs"></strong></div><div class="detail"><label>Entry Fee</label><strong id="fe"></strong></div><div class="detail"><label>Total Prize</label><strong id="pr"></strong></div><div class="detail"><label>Venue</label><strong id="ve"></strong></div><div class="detail"><label>Event ID</label><strong id="ei"></strong></div>
+</div><div class="note">Rules, schedule, registration link and additional participant instructions can be plugged into this event panel once those official details are finalized.</div></div>
+</div></div>
+
+<footer><div class="wrap">SHORe 5th Edition · GITAM Visakhapatnam · 18—20 December 2026</div></footer>
+
+<script>
+const EVENTS=[{"id": "E01", "sport": "Cricket", "category": "Cricket 10-over", "division": "Men", "basis": "Team", "fee": 3500, "prize": 40000, "venue": "Cricket Stadium"}, {"id": "E02", "sport": "Athletics", "category": "100m", "division": "Men", "basis": "Player", "fee": 200, "prize": 4500, "venue": "Cricket Stadium"}, {"id": "E03", "sport": "Athletics", "category": "100m", "division": "Women", "basis": "Player", "fee": 200, "prize": 4500, "venue": "Cricket Stadium"}, {"id": "E04", "sport": "Athletics", "category": "200m", "division": "Men", "basis": "Player", "fee": 200, "prize": 4500, "venue": "Cricket Stadium"}, {"id": "E05", "sport": "Athletics", "category": "200m", "division": "Women", "basis": "Player", "fee": 200, "prize": 4500, "venue": "Cricket Stadium"}, {"id": "E06", "sport": "Athletics", "category": "4x100 Relay", "division": "Men", "basis": "Team", "fee": 800, "prize": 12000, "venue": "Cricket Stadium"}, {"id": "E07", "sport": "Athletics", "category": "4x100 Relay", "division": "Women", "basis": "Team", "fee": 800, "prize": 12000, "venue": "Cricket Stadium"}, {"id": "E08", "sport": "Athletics", "category": "4x100 Relay", "division": "Mixed", "basis": "Team", "fee": 800, "prize": 12000, "venue": "Cricket Stadium"}, {"id": "E13", "sport": "Chess", "category": "Singles", "division": "Men", "basis": "Player", "fee": 300, "prize": 4500, "venue": "Karnam Malleshwari Hall"}, {"id": "E14", "sport": "Chess", "category": "Singles", "division": "Women", "basis": "Player", "fee": 300, "prize": 4500, "venue": "Karnam Malleshwari Hall"}, {"id": "E15", "sport": "Table Tennis", "category": "Singles", "division": "Men", "basis": "Player", "fee": 400, "prize": 7500, "venue": "Karnam Malleshwari Hall"}, {"id": "E16", "sport": "Table Tennis", "category": "Singles", "division": "Women", "basis": "Player", "fee": 400, "prize": 7500, "venue": "Karnam Malleshwari Hall"}, {"id": "E17", "sport": "Table Tennis", "category": "Doubles", "division": "Men", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "Karnam Malleshwari Hall"}, {"id": "E18", "sport": "Table Tennis", "category": "Doubles", "division": "Women", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "Karnam Malleshwari Hall"}, {"id": "E19", "sport": "Table Tennis", "category": "Mixed Doubles", "division": "Mixed", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "Karnam Malleshwari Hall"}, {"id": "E20", "sport": "Badminton", "category": "Singles", "division": "Men", "basis": "Player", "fee": 400, "prize": 7500, "venue": "KRM Indoor Stadium"}, {"id": "E21", "sport": "Badminton", "category": "Singles", "division": "Women", "basis": "Player", "fee": 400, "prize": 7500, "venue": "KRM Indoor Stadium"}, {"id": "E22", "sport": "Badminton", "category": "Doubles", "division": "Men", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "KRM Indoor Stadium"}, {"id": "E23", "sport": "Badminton", "category": "Doubles", "division": "Women", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "KRM Indoor Stadium"}, {"id": "E24", "sport": "Badminton", "category": "Mixed Doubles", "division": "Mixed", "basis": "Pair", "fee": 800, "prize": 12000, "venue": "KRM Indoor Stadium"}, {"id": "E25", "sport": "Kabaddi", "category": "Team", "division": "Men", "basis": "Team", "fee": 2000, "prize": 22500, "venue": "Tennis Court"}, {"id": "E26", "sport": "Pickleball", "category": "Singles", "division": "Men", "basis": "Player", "fee": 400, "prize": 6000, "venue": "Pickleball Court"}, {"id": "E27", "sport": "Pickleball", "category": "Singles", "division": "Women", "basis": "Player", "fee": 400, "prize": 6000, "venue": "Pickleball Court"}, {"id": "E28", "sport": "Pickleball", "category": "Doubles", "division": "Men", "basis": "Pair", "fee": 500, "prize": 7500, "venue": "Pickleball Court"}, {"id": "E29", "sport": "Pickleball", "category": "Doubles", "division": "Women", "basis": "Pair", "fee": 500, "prize": 7500, "venue": "Pickleball Court"}, {"id": "E30", "sport": "Pickleball", "category": "Mixed Doubles", "division": "Mixed", "basis": "Pair", "fee": 500, "prize": 7500, "venue": "Pickleball Court"}, {"id": "E31", "sport": "Football", "category": "Football 11v11", "division": "Men", "basis": "Team", "fee": 3000, "prize": 30000, "venue": "GIMSR Ground"}, {"id": "E32", "sport": "Football", "category": "Football 5v5", "division": "Men", "basis": "Team", "fee": 2000, "prize": 24000, "venue": "GIMSR Ground"}, {"id": "E33", "sport": "Volleyball", "category": "Team", "division": "Men", "basis": "Team", "fee": 2000, "prize": 22500, "venue": "GIMSR Ground"}, {"id": "E34", "sport": "Basketball", "category": "Team", "division": "Men", "basis": "Team", "fee": 2000, "prize": 24000, "venue": "GIMSR Ground"}, {"id": "E35", "sport": "Throwball", "category": "Team", "division": "Women", "basis": "Team", "fee": 2000, "prize": 22500, "venue": "GIMSR Ground"}, {"id": "E36", "sport": "Esports", "category": "Valorant", "division": "Open", "basis": "Team", "fee": 111, "prize": 9000, "venue": "MBA Classroom"}, {"id": "E37", "sport": "Esports", "category": "BGMI", "division": "Open", "basis": "Team", "fee": 111, "prize": 9000, "venue": "MBA Classroom"}, {"id": "E38", "sport": "Esports", "category": "Free Fire", "division": "Open", "basis": "Team", "fee": 111, "prize": 9000, "venue": "MBA Classroom"}];
+const META={"Cricket":["TEAM SPORT","https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=88"],"Athletics":["TRACK & FIELD","https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1600&q=88"],"Chess":["MIND SPORT","https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=1600&q=88"],"Table Tennis":["RACKET SPORT","https://images.unsplash.com/photo-1534158914592-062992f30b9c?auto=format&fit=crop&w=1600&q=88"],"Badminton":["RACKET SPORT","https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1600&q=88"],"Kabaddi":["TEAM / COMBAT","https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1600&q=88"],"Pickleball":["RACKET SPORT","https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1600&q=88"],"Football":["TEAM SPORT","https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=88"],"Volleyball":["TEAM SPORT","https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1600&q=88"],"Basketball":["TEAM SPORT","https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1600&q=88"],"Throwball":["TEAM SPORT","https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1600&q=88"],"Esports":["ESPORTS","https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=88"]};
+const money=n=>"₹"+Number(n).toLocaleString("en-IN");
+const sports=[...new Set(EVENTS.map(e=>e.sport))];
+let active="All";
+let activeDivision="All";
+const filters=document.getElementById("filters"), groups=document.getElementById("groups"), search=document.getElementById("search");
+
+filters.innerHTML=["All",...sports].map(s=>`<button class="filter ${s==="All"?"active":""}" data-sport="${s}">${s}</button>`).join("");
+filters.querySelectorAll("button").forEach(b=>b.onclick=()=>{active=b.dataset.sport;filters.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()});
+document.querySelectorAll(".divisionFilter").forEach(b=>b.addEventListener("click",()=>{activeDivision=b.dataset.division;document.querySelectorAll(".divisionFilter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()}));
+document.querySelectorAll(".divisionHero").forEach(b=>b.addEventListener("click",()=>{activeDivision=b.dataset.division;document.querySelectorAll(".divisionFilter").forEach(x=>x.classList.toggle("active",x.dataset.division===activeDivision));render();document.getElementById("groups").scrollIntoView({behavior:"smooth",block:"start"})}));
+search.oninput=render;
+
+function render(){
+ const q=search.value.trim().toLowerCase();
+ document.getElementById("menCount").textContent=`${EVENTS.filter(e=>e.division==="Men").length} events`;
+ document.getElementById("womenCount").textContent=`${EVENTS.filter(e=>e.division==="Women").length} events`;
+ const list=EVENTS.filter(e=>(active==="All"||e.sport===active)&&(activeDivision==="All"||e.division===activeDivision)&&(!q||[e.sport,e.category,e.division,e.basis,e.venue,e.id].join(" ").toLowerCase().includes(q)));
+ document.getElementById("count").textContent=`${list.length} event${list.length===1?"":"s"}`;
+ if(!list.length){groups.innerHTML='<div class="empty">No event matches your search. Try another keyword or sport.</div>';return}
+ const by={};list.forEach(e=>(by[e.sport]??=[]).push(e));
+ groups.innerHTML=Object.entries(by).map(([sport,arr])=>{
+   const m=META[sport];
+   return `<article class="sport reveal"><div class="cover"><img class="sportphoto" src="${m[1]}" alt="${sport} sports photography" loading="lazy" onerror="this.style.display='none'"/><div class="coverFallback"></div><div class="coverContent"><div class="tag">${m[0]}</div><div class="sportname">${sport}</div></div><div class="sportcount">${arr.length} EVENT${arr.length===1?"":"S"}</div></div><div class="cards ${arr.length===1?"single":""}">${arr.map(e=>`<button class="card" data-id="${e.id}" data-division="${e.division}"><div><div class="top"><span class="id">${e.id} · ${e.basis}</span><span class="division ${e.division.toLowerCase()}">${e.division}</span></div><div class="eventname">${e.category}</div><div class="sub">${e.venue}</div></div><div class="bottom"><div class="metrics"><div class="metric"><label>Entry</label><strong>${money(e.fee)}</strong></div><div class="metric"><label>Prize</label><strong>${money(e.prize)}</strong></div></div><span class="detailbtn">DETAILS ↗</span></div></button>`).join("")}</div></article>`;
+ }).join("");
+ document.querySelectorAll(".card").forEach(c=>c.onclick=()=>open(c.dataset.id));
+ observe();
+}
+function open(id){
+ const e=EVENTS.find(x=>x.id===id),m=META[e.sport];
+ document.getElementById("pic").style.backgroundImage=`url('${m[1]}')`;
+ document.getElementById("mk").textContent=`${e.sport} · ${e.category}`;
+ document.getElementById("mt").textContent=e.category;
+ document.getElementById("dv").textContent=e.division;
+ document.getElementById("bs").textContent=e.basis;
+ document.getElementById("fe").textContent=money(e.fee);
+ document.getElementById("pr").textContent=money(e.prize);
+ document.getElementById("ve").textContent=e.venue;
+ document.getElementById("ei").textContent=e.id;
+ document.getElementById("back").classList.add("open");document.body.style.overflow="hidden";
+}
+function close(){document.getElementById("back").classList.remove("open");document.body.style.overflow=""}
+document.getElementById("close").onclick=close;document.getElementById("back").onclick=e=>{if(e.target.id==="back")close()};document.onkeydown=e=>{if(e.key==="Escape")close()};
+let io;function observe(){if(io)io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll(".reveal").forEach(e=>io.observe(e))}
+// SHORe motion engine — fluid canvas, scroll reveals, counters, parallax and visibility-aware animation
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canvas=document.getElementById("liquidCanvas"),ctx=canvas.getContext("2d",{alpha:true});
+let cw=0,ch=0,dpr=1,raf=0,running=false,last=0;
+const palette=["#152E9B","#88C2F9","#E7C69E","#2544CE","#1B6FD6"];
+const blobs=palette.map((color,i)=>({color,x:.08+i*.21,y:.16+(i%3)*.29,vx:(i%2?-.00018:.00015)*(1+i*.05),vy:(i%2?.00013:-.00011)*(1+i*.04),r:.20+(i%3)*.045,a:.22+(i%2)*.045,phase:i*1.7}));
+function resizeCanvas(){dpr=Math.min(devicePixelRatio||1,1.5);cw=innerWidth;ch=innerHeight;canvas.width=Math.max(1,Math.floor(cw*dpr));canvas.height=Math.max(1,Math.floor(ch*dpr));ctx.setTransform(dpr,0,0,dpr,0,0)}
+function hexA(hex,a){return hex+Math.max(0,Math.min(255,Math.round(a*255))).toString(16).padStart(2,"0")}
+function drawLiquid(t){if(!running||reduced)return;const dt=Math.min(32,t-last||16);last=t;ctx.clearRect(0,0,cw,ch);ctx.globalCompositeOperation="screen";blobs.forEach((b,i)=>{b.x+=b.vx*dt;b.y+=b.vy*dt;b.phase+=.0025*dt;if(b.x<-.18||b.x>1.18)b.vx*=-1;if(b.y<-.18||b.y>1.18)b.vy*=-1;const wobble=Math.sin(b.phase)*.025;const x=(b.x+wobble)*cw,y=(b.y+Math.cos(b.phase*.8)*.018)*ch,r=b.r*Math.min(cw,ch);const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,hexA(b.color,b.a));g.addColorStop(.34,hexA(b.color,b.a*.58));g.addColorStop(.7,hexA(b.color,.10));g.addColorStop(1,hexA(b.color,0));ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()});ctx.globalCompositeOperation="source-over";raf=requestAnimationFrame(drawLiquid)}
+function startLiquid(){if(reduced||running)return;running=true;last=performance.now();raf=requestAnimationFrame(drawLiquid)}
+function stopLiquid(){running=false;if(raf){cancelAnimationFrame(raf);raf=0}}
+resizeCanvas();addEventListener("resize",resizeCanvas,{passive:true});document.addEventListener("visibilitychange",()=>document.hidden?stopLiquid():startLiquid());startLiquid();
+const progress=document.getElementById("scrollProgress");
+function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+"%";if(!reduced){const hero=document.querySelector(".heroimg");if(hero)hero.style.transform=`scale(1.02) translate3d(0,${Math.min(34,scrollY*.035)}px,0)`;}}
+addEventListener("scroll",updateScroll,{passive:true});updateScroll();
+const stats=document.querySelector(".stats");
+const statsIO=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("visible");e.target.querySelectorAll("[data-count]").forEach(el=>{if(el.dataset.done)return;el.dataset.done="1";const target=Number(el.dataset.count),start=performance.now(),duration=1300;const tick=now=>{const p=Math.min(1,(now-start)/duration),ease=1-Math.pow(1-p,3),val=Math.round(target*ease);el.textContent="₹"+(val/100000).toFixed(1).replace(".0","")+"L";if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)});statsIO.unobserve(e.target)})},{threshold:.25});if(stats)statsIO.observe(stats);
+requestAnimationFrame(()=>document.querySelector(".hero").classList.add("loaded"));
+render();
+</script>
+</body>
+</html>
