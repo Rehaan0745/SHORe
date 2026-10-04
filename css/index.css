@@ -523,3 +523,53 @@ html[data-theme=day] .hero.photos .scene::after{background:linear-gradient(90deg
 .no-intro .loader{display:none}
 .no-intro .mask .w{animation-delay:.05s,0s}.no-intro .mask .line:nth-child(2) .w{animation-delay:.15s,-3s}
 .no-intro .script{animation-delay:.2s}.no-intro .fx{animation-delay:.3s}.no-intro .gitphin{animation:gIn 1s var(--ease) .1s both,float 5.5s ease-in-out 1.2s infinite!important}
+
+/* ===== v9: wavy GPU marble countdown, clean intro, blending ===== */
+.cd>.mbc{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:0;transition:opacity .8s}
+.cd.gl>.mbc{opacity:1}.cd.gl>.mb{display:none}
+img.cutting{visibility:hidden}
+.loader .lgit{height:min(54vh,520px)}
+.ltxt{top:max(7vh,2.2rem);gap:1rem}
+.loader .llogo{width:clamp(60px,10vh,92px)}
+.lname{font-size:clamp(2.8rem,9vw,6.6rem)}.lwel{font-size:.8rem;letter-spacing:.6em}
+/* light backgrounds: the pose melts into the colour behind it */
+html[data-theme=day] .mingle{mix-blend-mode:multiply}
+
+/* ===== v9: light intro (white-background art multiplies away), wavy countdown, round logo ===== */
+.logo img,.flogo,.loader .llogo{object-fit:cover;border-radius:50%}
+.loader{background:radial-gradient(circle at 50% 80%,#ffffff 0,#fff1e3 36%,#cfe6ff 100%);color:var(--blue)}
+.lrings span{border-color:rgba(21,46,156,.25)}
+.lname{color:var(--blue)}.lname span+span{color:#3a62e6}.lwel{color:var(--blue)}
+.loader .ld{background:rgba(21,46,156,.15)}.loader .ld u{background:var(--blue)}
+.loader .lgit{mix-blend-mode:multiply;filter:none}
+/* poses on light grounds multiply into the background; on dark grounds they stay solid cut-outs */
+.g-d{mix-blend-mode:multiply;filter:brightness(1.08) saturate(1.08)}
+html[data-theme=day] .mingle{mix-blend-mode:multiply}
+/* countdown: GPU marble that flows in waves (canvas), image scroll is only the fallback */
+.cd .mbc{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.cd.gl>.mb{display:none}
+.cd .u,.cd em{position:relative;z-index:1}
+.cd::before{z-index:0}
+
+/* countdown never shows black: pure-CSS marble under the shader (also the no-WebGL / reduced-motion look) */
+.cd{background:repeating-linear-gradient(115deg,#14408F 0 9%,#88C2F9 9% 17%,#E7C69E 17% 24%,#F9E4D1 24% 28%,#14408F 28% 40%)}
+.cd>.mb{display:none!important}
+
+/* hero pose stays a crisp cut-out: multiply over a detailed photo turns it ghostly (checked) */
+.g-d{mix-blend-mode:normal;filter:none}
+
+/* ===== v10: 2-second welcome, hero starts as the curtain lifts, wavy countdown fallback ===== */
+.loader .lgit{animation:lup .9s cubic-bezier(.2,1.2,.4,1) .05s both,lbob 2.6s ease-in-out 1s infinite}
+.loader .llogo{animation-duration:.7s}.lname span{animation-duration:.8s;animation-delay:.25s}.lname span+span{animation-delay:.42s}.lwel{animation-duration:.8s;animation-delay:.7s}
+.loader .ld{width:min(60vw,220px)}
+.loader .ld u{width:100%;transform:scaleX(0);transform-origin:left;animation:ldfill 2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes ldfill{to{transform:scaleX(1)}}
+.loader{transition:transform .9s cubic-bezier(.77,0,.18,1)}
+.mask .w{animation-delay:1.9s,0s}.mask .line:nth-child(2) .w{animation-delay:2.05s,-3s}
+.script{animation-delay:2.25s}.fx{animation-delay:2.4s}
+.gitphin{animation:gIn 1s var(--ease) 2s both,float 5.5s ease-in-out 3.1s infinite!important}
+.no-intro .mask .w{animation-delay:.05s,0s}.no-intro .mask .line:nth-child(2) .w{animation-delay:.15s,-3s}
+.no-intro .script{animation-delay:.2s}.no-intro .fx{animation-delay:.3s}.no-intro .gitphin{animation:gIn 1s var(--ease) .1s both,float 5.5s ease-in-out 1.2s infinite!important}
+/* no-WebGL fallback: the same stripes, drifting */
+.cd{background-size:260% 260%;animation:cdDrift 22s ease-in-out infinite alternate}
+@keyframes cdDrift{to{background-position:100% 60%}}
