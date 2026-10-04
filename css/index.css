@@ -5,7 +5,7 @@
 :root{
   --sand:#E7C69E; --blue:#162E9C; --cream:#F9E4D1; --lime:#E7C69E; --gold:#88C2F9;
   --ink:#0b1659; --deep:#0a1038;
-  --serif:"Roxborough CF","Cardo","Noto Serif",Georgia,serif;
+  --serif:"Roxborough CF","Cardo",Georgia,serif;
   --sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.2,.8,.2,1);
 }
@@ -411,7 +411,7 @@ html[data-theme=day] .o-sun{transition-delay:.55s!important}html[data-theme=nigh
 
 /* optional real photos: add Assets/shore_day.jpg + Assets/shore_night.jpg */
 .ph{inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.07);transition:opacity 2.6s ease,transform 8s ease-out}
-.ph-d{background-image:url("../Assets/shore_day.jpg")}.ph-n{background-image:url("../Assets/shore_night.jpg")}
+
 html[data-theme=day] .hero.photos .ph-d,html[data-theme=night] .hero.photos .ph-n{opacity:1;transform:none}
 .hero.photos .orb,.hero.photos .hills,.hero.photos .city,.hero.photos .seab,.hero.photos .palm,.hero.photos .stars,.hero.photos .sky{display:none}
 .hero.photos .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,40,.5),transparent 62%)}
@@ -495,3 +495,31 @@ html[data-theme=night] .tg-l.d{opacity:0}html[data-theme=night] .tg-l.n{opacity:
 .ph{transition:opacity 2.6s ease,transform 2.8s cubic-bezier(.55,0,.2,1)}
 .hero.photos .scene::after{background:linear-gradient(90deg,rgba(4,8,40,.55),transparent 66%)}
 html[data-theme=day] .hero.photos .scene::after{background:linear-gradient(90deg,rgba(255,248,239,.62),rgba(255,248,239,.2) 55%,transparent 75%)}
+
+/* ===== v8: speed + clean mascot blending + round logo ===== */
+.logo{flex:none}.logo img{width:54px;height:54px;object-fit:contain;aspect-ratio:1/1;flex:none}
+.flogo,.loader .llogo{aspect-ratio:1/1;object-fit:contain}
+:root{--stk:none}
+.gitphin,.g-n,.g-d,.peek,.pb img,.machao,.hv,.fg,.bgg,.loader .lgit{filter:none}
+.pb img,.machao,.hv,.fg,.bgg{filter:drop-shadow(0 14px 14px rgba(0,0,30,.2))}
+/* poses are true cut-outs (no white box), so they stay solid: no blend mode needed */
+.mingle{mix-blend-mode:normal}
+.scene::before{display:none}
+.hero.photos .cl{display:none}
+.ph{will-change:transform,opacity}
+/* marble from the logo itself, no SVG filter */
+.cd>.mb{top:0;bottom:0;left:0;right:auto;inset:auto;width:calc(100% + 2400px);height:100%;background:url("../Assets/marble.jpg") 0 0/2400px 100% repeat-x;filter:none;animation:mbs 90s linear infinite}
+@keyframes mbs{to{transform:translateX(-2400px)}}
+.verts .v{backdrop-filter:none}
+/* short intro (about 1s) */
+.loader{transition:transform .8s cubic-bezier(.77,0,.18,1)}
+.lrings span{animation-duration:1.8s}.lrings span:nth-child(2){animation-delay:.5s}.lrings span:nth-child(3){animation-delay:1s}
+.loader .llogo{animation-duration:.6s}.lhi{animation-duration:.6s;animation-delay:.08s}
+.lname span{animation-duration:.6s;animation-delay:.15s}.lname span+span{animation-delay:.25s}.lwel{animation-duration:.6s;animation-delay:.35s}
+.loader .lgit{animation:lup .7s cubic-bezier(.2,1.2,.4,1) .02s both,lbob 2.6s ease-in-out .8s infinite}
+.mask .w{animation-delay:.95s,0s}.mask .line:nth-child(2) .w{animation-delay:1.1s,-3s}
+.script{animation-delay:1.2s}.fx{animation-delay:1.4s}
+.gitphin{animation:gIn 1s var(--ease) 1.1s both,float 5.5s ease-in-out 2.2s infinite!important}
+.no-intro .loader{display:none}
+.no-intro .mask .w{animation-delay:.05s,0s}.no-intro .mask .line:nth-child(2) .w{animation-delay:.15s,-3s}
+.no-intro .script{animation-delay:.2s}.no-intro .fx{animation-delay:.3s}.no-intro .gitphin{animation:gIn 1s var(--ease) .1s both,float 5.5s ease-in-out 1.2s infinite!important}
