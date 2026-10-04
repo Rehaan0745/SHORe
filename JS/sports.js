@@ -11,7 +11,7 @@ const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* live numbers from the data, so the page can never disagree with the list */
 const total=EVENTS.reduce((s,e)=>s+e.prize,0),venues=new Set(EVENTS.map(e=>e.venue)).size;
 $("sEvents").textContent=EVENTS.length;$("sSports").textContent=sports.length;$("sVenues").textContent=venues;$("sPrize").dataset.count=total;$("sPrize").textContent=lakh(total);
-$("pEvents").textContent=EVENTS.length+" EVENTS";$("pPrize").textContent=lakh(total)+" TOTAL PRIZES";
+
 $("menCount").textContent=EVENTS.filter(e=>e.division==="Men").length+" events";$("womenCount").textContent=EVENTS.filter(e=>e.division==="Women").length+" events";
 
 filters.innerHTML=["All",...sports].map(s=>`<button class="filter ${s==="All"?"active":""}" data-sport="${s}">${s}</button>`).join("");
