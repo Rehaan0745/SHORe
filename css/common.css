@@ -5,7 +5,7 @@
 --serif:"Roxborough CF","Cardo","Noto Serif",Georgia,serif;--sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace;--ease:cubic-bezier(.2,.8,.2,1);
 --bg:#F9E4D1;--bg2:#fff8ef;--fg:#152E9C;--muted:rgba(21,46,156,.76);--dim:rgba(21,46,156,.55);--em:#3a62e6;--line:rgba(21,46,156,.2);--surf:rgba(255,255,255,.6);--surf2:rgba(255,255,255,.88);--hfg:#0d2278;--chip-bg:#152E9C;--chip-fg:#F9E4D1;
 --hero-ov:linear-gradient(90deg,rgba(249,228,209,.96),rgba(249,228,209,.78) 42%,rgba(249,228,209,.1));
---stk:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 0 26px rgba(255,255,255,.5)) drop-shadow(0 24px 24px rgba(0,0,30,.35))}
+--stk:none}
 html[data-theme=night]{--bg:#060b2e;--bg2:#0a1240;--fg:#F9E4D1;--muted:rgba(249,228,209,.8);--dim:rgba(249,228,209,.5);--em:#88C2F9;--line:rgba(249,228,209,.16);--surf:rgba(249,228,209,.06);--surf2:rgba(249,228,209,.1);--hfg:#F9E4D1;--chip-bg:#F9E4D1;--chip-fg:#152E9C;
 --hero-ov:linear-gradient(90deg,rgba(6,11,46,.97),rgba(6,11,46,.74) 42%,rgba(6,11,46,.12))}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -19,7 +19,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:max(1rem,env(safe-are
 nav.stuck{color:var(--fg);background:rgba(249,228,209,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 html[data-theme=night] nav.stuck{background:rgba(6,11,46,.86)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo img{height:54px;width:auto;display:block;transition:transform .8s var(--ease)}.logo:hover img{transform:rotate(360deg)}
+.logo{flex:none}.logo img{width:54px;height:54px;object-fit:contain;aspect-ratio:1/1;display:block;flex:none;transition:transform .8s var(--ease)}.logo:hover img{transform:rotate(360deg)}
 .links{display:flex;align-items:center;gap:1.9rem;font-weight:500;font-size:.95rem}
 .links>a,.dd-btn{position:relative;padding:.3rem 0}
 .links>a::after,.dd-btn::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
@@ -65,7 +65,7 @@ html[data-theme=day] .tg-k .i-moon{opacity:0;transform:rotate(-120deg) scale(.4)
 footer{background:#0a1038;color:var(--cream);padding:4.5rem 0 2rem;position:relative;overflow:hidden}
 .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}.foot h4{font:600 .72rem var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#88C2F9;margin-bottom:1rem}
 .foot li{list-style:none;margin:.4rem 0}.foot a:hover{color:#88C2F9}
-.flogo{display:block;margin:3rem auto 0;width:min(46vw,260px);height:auto;border-radius:50%;box-shadow:0 0 0 10px rgba(249,228,209,.06),0 0 90px rgba(136,194,249,.35);animation:lsway 9s ease-in-out infinite alternate}
+.flogo{aspect-ratio:1/1;object-fit:contain;display:block;margin:3rem auto 0;width:min(46vw,260px);height:auto;border-radius:50%;box-shadow:0 0 0 10px rgba(249,228,209,.06),0 0 90px rgba(136,194,249,.35);animation:lsway 9s ease-in-out infinite alternate}
 @keyframes lsway{from{transform:rotate(-5deg)}to{transform:rotate(5deg) translateY(-8px)}}
 .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2rem;font-size:.8rem;opacity:.7}
 .thm button{background:none;border:0;text-decoration:underline;text-underline-offset:3px;opacity:.8}.thm button[aria-pressed=true]{color:#88C2F9;opacity:1;font-weight:700}
