@@ -1,1 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#060A18">
+
+<title>SHORe — Coming Soon</title>
+
+<!-- =========================================================
+     FONTS
+========================================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   SHORe — COMING SOON
+   Single-file website
+========================================================= */
+
+:root {
+    --abyss: #060A18;
+    --deep: #0A1030;
+
+    --cobalt: #152E9B;
+    --cobalt-lift: #2544CE;
+
+    --mist: #88C2F9;
+    --sand: #E7C69E;
+
+    --white: #EDF2FF;
+    --muted: #A9B7DC;
+    --dim: #6C7CA8;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: var(--abyss);
+
+    color: var(--white);
+
+    font-family: "Instrument Sans", sans-serif;
+}
+
+
+/* =========================================================
+   LIQUID CANVAS
+========================================================= */
+
+#liquidCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FILM GRAIN
+========================================================= */
+
+.noise {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+
+    width: min(1180px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 24px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    font-family: "Gabarito", sans-serif;
+
+    font-size: 29px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.7px;
+}
+
+
+.logo span {
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--mist),
+            #ffffff,
+            var(--sand),
+            var(--mist)
+        );
+
+    background-size: 280% 100%;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift 5s ease-in-out infinite;
+}
+
+
+.nav-tag {
+
+    padding: 9px 13px;
+
+    border:
+        1px solid
+        rgba(237, 242, 255, 0.15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(6, 10, 24, 0.35);
+
+    backdrop-filter: blur(12px);
+
+    color: var(--muted);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    flex: 1;
+
+    width: min(1180px, calc(100% - 40px));
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        20px
+        0
+        65px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.kicker {
+
+    margin-bottom: 23px;
+
+    color: var(--sand);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2.8px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation:
+        rise 0.8s
+        0.15s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+/* =========================================================
+   SHORe TITLE
+========================================================= */
+
+h1 {
+
+    margin: 0;
+
+    font-family: "Gabarito", sans-serif;
+
+    font-size:
+        clamp(
+            5rem,
+            14vw,
+            10.5rem
+        );
+
+    line-height: 0.76;
+
+    font-weight: 900;
+
+    letter-spacing: -7px;
+
+    opacity: 0;
+
+    transform:
+        translateY(32px)
+        scale(0.97);
+
+    animation:
+        heroIn
+        1.1s
+        0.28s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+/* =========================================================
+   ANIMATED SHORe GRADIENT
+========================================================= */
+
+.shore-text {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            110deg,
+
+            var(--mist) 0%,
+
+            #ffffff 25%,
+
+            var(--sand) 48%,
+
+            var(--mist) 72%,
+
+            #ffffff 100%
+        );
+
+    background-size: 280% 100%;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+
+    max-width: 650px;
+
+    margin:
+        31px
+        auto
+        0;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            0.95rem,
+            2vw,
+            1.2rem
+        );
+
+    line-height: 1.65;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        rise
+        0.85s
+        0.68s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.date {
+
+    margin-top: 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--white);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation:
+        rise
+        0.8s
+        0.84s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+/* =========================================================
+   PULSING DOT
+========================================================= */
+
+.dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--sand);
+
+    box-shadow:
+        0 0 20px
+        rgba(231,198,158,.75);
+
+    animation:
+        pulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown {
+
+    margin-top: 37px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 120px);
+
+    gap: 9px;
+
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    animation:
+        rise
+        0.85s
+        1s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+.time {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        17px
+        10px
+        14px;
+
+    border:
+        1px solid
+        rgba(237,242,255,.13);
+
+    border-radius: 17px;
+
+    background:
+        rgba(6,10,24,.34);
+
+    backdrop-filter: blur(16px);
+}
+
+
+.time::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -30%;
+
+    bottom: -55%;
+
+    width: 160%;
+
+    height: 100%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(136,194,249,.14),
+            transparent 62%
+        );
+
+    animation:
+        cardGlow
+        5s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.number {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-family: "Gabarito", sans-serif;
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3rem
+        );
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.label {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 8px;
+
+    color: var(--dim);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTENT TAGS
+========================================================= */
+
+.coming {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation:
+        rise
+        0.8s
+        1.14s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+.pill {
+
+    padding:
+        9px
+        14px;
+
+    border:
+        1px solid
+        rgba(237,242,255,.12);
+
+    border-radius: 999px;
+
+    background:
+        rgba(10,16,48,.3);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        color .35s ease;
+}
+
+
+.pill.highlight {
+
+    color: var(--white);
+
+    border-color:
+        rgba(231,198,158,.34);
+}
+
+
+.pill:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(136,194,249,.45);
+
+    color: white;
+}
+
+
+/* =========================================================
+   LIVE MESSAGE
+========================================================= */
+
+.notice {
+
+    margin-top: 33px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    animation:
+        rise
+        .8s
+        1.28s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+.notice strong {
+
+    color: var(--sand);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    width: min(1180px, calc(100% - 40px));
+
+    margin: auto;
+
+    padding-bottom: 21px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--dim);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BOTTOM WAVE
+========================================================= */
+
+.wave {
+
+    position: fixed;
+
+    z-index: 1;
+
+    left: -5%;
+
+    bottom: -1px;
+
+    width: 110%;
+
+    height: 100px;
+
+    pointer-events: none;
+
+    opacity: .2;
+}
+
+
+.wave svg {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+.wave path {
+
+    fill: var(--mist);
+
+    animation:
+        waveMotion
+        9s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes rise {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heroIn {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+    }
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.8);
+
+        opacity: .55;
+    }
+
+    50% {
+
+        transform:
+            scale(1.35);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes cardGlow {
+
+    from {
+
+        transform:
+            translate(-8px,8px);
+    }
+
+    to {
+
+        transform:
+            translate(15px,-8px);
+    }
+}
+
+
+@keyframes waveMotion {
+
+    from {
+
+        transform:
+            translateX(-2%)
+            scaleY(1);
+    }
+
+    to {
+
+        transform:
+            translateX(2%)
+            scaleY(1.08);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    nav {
+
+        width:
+            calc(100% - 28px);
+
+        padding:
+            18px 0;
+    }
+
+
+    .nav-tag {
+
+        padding:
+            8px
+            10px;
+
+        font-size: 7px;
+    }
+
+
+    main {
+
+        width:
+            calc(100% - 28px);
+
+        padding:
+            20px
+            0
+            50px;
+    }
+
+
+    h1 {
+
+        font-size:
+            clamp(
+                4.5rem,
+                24vw,
+                6.3rem
+            );
+
+        letter-spacing: -4px;
+    }
+
+
+    .subtitle {
+
+        max-width: 390px;
+
+        margin-top: 25px;
+
+        font-size: .92rem;
+    }
+
+
+    .date {
+
+        justify-content: center;
+
+        text-align: center;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .countdown {
+
+        width:
+            min(300px,100%);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        margin-top: 30px;
+    }
+
+
+    .time {
+
+        padding:
+            15px
+            9px
+            13px;
+    }
+
+
+    .coming {
+
+        max-width: 330px;
+
+        margin-top: 28px;
+    }
+
+
+    .notice {
+
+        text-align: center;
+
+        font-size: 11px;
+    }
+
+
+    footer {
+
+        width:
+            calc(100% - 28px);
+
+        font-size: 6px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANIMATED BACKGROUND
+========================================================= -->
+
+<canvas
+    id="liquidCanvas"
+    aria-hidden="true">
+</canvas>
+
+
+<div
+    class="noise"
+    aria-hidden="true">
+</div>
+
+
+<div class="page">
+
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+
+<nav>
+
+    <div class="logo">
+        <span>SHORe</span>
+    </div>
+
+    <div class="nav-tag">
+        5TH EDITION · 2026
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section
+    class="hero"
+    aria-label="SHORe coming soon">
+
+
+    <div class="kicker">
+
+        Something big is taking shape
+
+    </div>
+
+
+    <h1>
+
+        <span class="shore-text">
+            SHORe
+        </span>
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        New beginnings are loading.
+        The events, artists, passes and everything
+        that makes SHORe are getting ready to meet you.
+
+    </p>
+
+
+    <div class="date">
+
+        <span class="dot"></span>
+
+        18 — 20 DECEMBER 2026
+        ·
+        GITAM VISAKHAPATNAM
+
+    </div>
+
+
+    <!-- =====================================================
+         COUNTDOWN
+    ====================================================== -->
+
+    <div
+        class="countdown"
+        aria-label="Countdown to SHORe">
+
+        <div class="time">
+
+            <div
+                class="number"
+                id="days">
+                00
+            </div>
+
+            <div class="label">
+                Days
+            </div>
+
+        </div>
+
+
+        <div class="time">
+
+            <div
+                class="number"
+                id="hours">
+                00
+            </div>
+
+            <div class="label">
+                Hours
+            </div>
+
+        </div>
+
+
+        <div class="time">
+
+            <div
+                class="number"
+                id="minutes">
+                00
+            </div>
+
+            <div class="label">
+                Minutes
+            </div>
+
+        </div>
+
+
+        <div class="time">
+
+            <div
+                class="number"
+                id="seconds">
+                00
+            </div>
+
+            <div class="label">
+                Seconds
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTENT COMING SOON
+    ====================================================== -->
+
+    <div class="coming">
+
+        <span class="pill highlight">
+            EVENTS
+        </span>
+
+        <span class="pill">
+            ARTISTS
+        </span>
+
+        <span class="pill">
+            PASSES
+        </span>
+
+        <span class="pill">
+            SCHEDULE
+        </span>
+
+        <span class="pill">
+            ABOUT
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         LIVE MESSAGE
+    ====================================================== -->
+
+    <div class="notice">
+
+        <span class="dot"></span>
+
+        <span>
+
+            <strong>
+                CONTENTS GOING LIVE SOON
+            </strong>
+
+            · Stay close to the shore.
+
+        </span>
+
+    </div>
+
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <span>
+        SHORe · New Beginnings
+    </span>
+
+    <span>
+        GITAM · VISAKHAPATNAM
+    </span>
+
+</footer>
+
+
+</div>
+
+
+<!-- =========================================================
+     ANIMATED WAVE
+========================================================= -->
+
+<div
+    class="wave"
+    aria-hidden="true">
+
+    <svg
+        viewBox="0 0 1440 180"
+        preserveAspectRatio="none">
+
+        <path
+            d="
+            M0,100
+            C180,20 330,160 540,90
+            C760,15 880,160 1100,80
+            C1240,30 1340,80 1440,35
+            L1440,180
+            L0,180
+            Z
+            ">
+        </path>
+
+    </svg>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    /* =======================================================
+       COUNTDOWN
+    ======================================================= */
+
+    const targetDate =
+        new Date(
+            "2026-12-18T00:00:00+05:30"
+        ).getTime();
+
+
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    function updateCountdown() {
+
+        let difference =
+            Math.max(
+                0,
+                targetDate - Date.now()
+            );
+
+
+        const DAY =
+            86400000;
+
+        const HOUR =
+            3600000;
+
+        const MINUTE =
+            60000;
+
+
+        const days =
+            Math.floor(
+                difference / DAY
+            );
+
+
+        difference %= DAY;
+
+
+        const hours =
+            Math.floor(
+                difference / HOUR
+            );
+
+
+        difference %= HOUR;
+
+
+        const minutes =
+            Math.floor(
+                difference / MINUTE
+            );
+
+
+        difference %= MINUTE;
+
+
+        const seconds =
+            Math.floor(
+                difference / 1000
+            );
+
+
+        daysElement.textContent =
+            String(days).padStart(2,"0");
+
+
+        hoursElement.textContent =
+            String(hours).padStart(2,"0");
+
+
+        minutesElement.textContent =
+            String(minutes).padStart(2,"0");
+
+
+        secondsElement.textContent =
+            String(seconds).padStart(2,"0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
+
+    /* =======================================================
+       LIQUID BACKGROUND
+    ======================================================= */
+
+    const canvas =
+        document.getElementById(
+            "liquidCanvas"
+        );
+
+
+    const context =
+        canvas.getContext("2d");
+
+
+    if (!context) {
+        return;
+    }
+
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    const colors = [
+
+        "#152E9B",
+
+        "#88C2F9",
+
+        "#E7C69E",
+
+        "#2544CE",
+
+        "#1B6FD6"
+
+    ];
+
+
+    /*
+       Each blob behaves like a slowly moving
+       liquid light source.
+    */
+
+    const blobs = [
+
+        {
+            x: .10,
+            y: .15,
+            radius: .38,
+            vx: .00012,
+            vy: .00008,
+            color: 0
+        },
+
+        {
+            x: .87,
+            y: .16,
+            radius: .30,
+            vx: -.00009,
+            vy: .00012,
+            color: 1
+        },
+
+        {
+            x: .54,
+            y: .84,
+            radius: .40,
+            vx: .00008,
+            vy: -.00010,
+            color: 2
+        },
+
+        {
+            x: .15,
+            y: .79,
+            radius: .30,
+            vx: .00010,
+            vy: -.00007,
+            color: 3
+        },
+
+        {
+            x: .78,
+            y: .68,
+            radius: .34,
+            vx: -.00007,
+            vy: -.00006,
+            color: 4
+        }
+
+    ];
+
+
+    let width = 0;
+
+    let height = 0;
+
+    let pixelRatio = 1;
+
+    let animationFrame = 0;
+
+    let animationRunning = true;
+
+
+    /* =======================================================
+       RESIZE
+    ======================================================= */
+
+    function resizeCanvas() {
+
+        pixelRatio =
+            Math.min(
+                window.devicePixelRatio || 1,
+                2
+            );
+
+
+        width =
+            window.innerWidth;
+
+
+        height =
+            window.innerHeight;
+
+
+        canvas.width =
+            Math.floor(
+                width * pixelRatio
+            );
+
+
+        canvas.height =
+            Math.floor(
+                height * pixelRatio
+            );
+
+
+        canvas.style.width =
+            width + "px";
+
+
+        canvas.style.height =
+            height + "px";
+
+
+        context.setTransform(
+            pixelRatio,
+            0,
+            0,
+            pixelRatio,
+            0,
+            0
+        );
+
+    }
+
+
+    resizeCanvas();
+
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas,
+        {
+            passive: true
+        }
+    );
+
+
+
+    /* =======================================================
+       LIQUID ANIMATION LOOP
+    ======================================================= */
+
+    function animate(time) {
+
+        if (
+            !animationRunning ||
+            reducedMotion.matches
+        ) {
+
+            animationFrame = 0;
+
+            return;
+        }
+
+
+        context.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        /*
+           Base ocean background.
+        */
+
+        context.fillStyle =
+            "#060A18";
+
+
+        context.fillRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        blobs.forEach(
+            function (blob,index) {
+
+
+                /*
+                   Move blob.
+                */
+
+                blob.x +=
+                    blob.vx *
+                    (width / 1000);
+
+
+                blob.y +=
+                    blob.vy *
+                    (height / 1000);
+
+
+                /*
+                   Bounce softly at boundaries.
+                */
+
+                if (
+                    blob.x < -.2 ||
+                    blob.x > 1.2
+                ) {
+
+                    blob.vx *= -1;
+
+                }
+
+
+                if (
+                    blob.y < -.2 ||
+                    blob.y > 1.2
+                ) {
+
+                    blob.vy *= -1;
+
+                }
+
+
+                /*
+                   Gentle breathing motion.
+                */
+
+                const pulse =
+                    1 +
+                    Math.sin(
+                        time * .00045 +
+                        index * 1.7
+                    ) * .05;
+
+
+                const radius =
+                    Math.min(
+                        width,
+                        height
+                    ) *
+                    blob.radius *
+                    pulse;
+
+
+                const x =
+                    blob.x * width;
+
+
+                const y =
+                    blob.y * height;
+
+
+                /*
+                   Radial liquid glow.
+                */
+
+                const gradient =
+                    context.createRadialGradient(
+                        x,
+                        y,
+                        0,
+                        x,
+                        y,
+                        radius
+                    );
+
+
+                gradient.addColorStop(
+                    0,
+                    colors[blob.color] + "B8"
+                );
+
+
+                gradient.addColorStop(
+                    .35,
+                    colors[blob.color] + "4D"
+                );
+
+
+                gradient.addColorStop(
+                    1,
+                    colors[blob.color] + "00"
+                );
+
+
+                context.fillStyle =
+                    gradient;
+
+
+                context.beginPath();
+
+
+                context.arc(
+                    x,
+                    y,
+                    radius,
+                    0,
+                    Math.PI * 2
+                );
+
+
+                context.fill();
+
+            }
+        );
+
+
+        animationFrame =
+            requestAnimationFrame(
+                animate
+            );
+
+    }
+
+
+
+    /* =======================================================
+       START / STOP
+    ======================================================= */
+
+    function startAnimation() {
+
+        if (
+            !animationFrame &&
+            animationRunning &&
+            !reducedMotion.matches
+        ) {
+
+            animationFrame =
+                requestAnimationFrame(
+                    animate
+                );
+
+        }
+
+    }
+
+
+    /*
+       Stop animation when the browser tab
+       is hidden.
+    */
+
+    document.addEventListener(
+        "visibilitychange",
+        function () {
+
+            animationRunning =
+                !document.hidden;
+
+
+            if (animationRunning) {
+
+                startAnimation();
+
+            }
+
+        }
+    );
+
+
+    /*
+       Respect reduced-motion settings.
+    */
+
+    if (
+        reducedMotion.addEventListener
+    ) {
+
+        reducedMotion.addEventListener(
+            "change",
+            function () {
+
+                if (
+                    reducedMotion.matches
+                ) {
+
+                    animationRunning =
+                        false;
+
+
+                    if (animationFrame) {
+
+                        cancelAnimationFrame(
+                            animationFrame
+                        );
+
+                    }
+
+
+                    animationFrame = 0;
+
+                } else {
+
+                    animationRunning =
+                        true;
+
+
+                    startAnimation();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    startAnimation();
+
+})();
+
+</script>
+
+</body>
+</html>
