@@ -21,7 +21,7 @@
     try{var c=knock(img);c.toBlob(function(b){if(b){img.onload=function(){img.classList.remove('cutting')};img.src=URL.createObjectURL(b)}else img.classList.remove('cutting')})}catch(e){img.classList.remove('cutting')}
   }
   function fallback(img){
-    if(img.dataset.fell)return;img.dataset.fell=1;img.classList.add('cutting');
+    if(img.dataset.fell)return;img.dataset.fell=1;try{console.warn('SHOЯe: '+img.getAttribute('src')+' not found. Copy the Assets/mascot folder into your repo; using the slow original for now.')}catch(e){}img.classList.add('cutting');
     img.onload=function(){img.onload=null;clean(img)};img.onerror=function(){img.classList.remove('cutting')};img.src=img.dataset.orig;
   }
   function init(){document.querySelectorAll('img[data-orig]').forEach(function(img){
