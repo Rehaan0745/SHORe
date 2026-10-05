@@ -1,185 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SHORe Sports 2026 · GITAM Visakhapatnam</title>
-<meta name="description" content="SHORe Sports 2026 — Inter-University Sports Championship at GITAM Visakhapatnam. Cricket, athletics, chess, table tennis, badminton, kabaddi, pickleball, football, volleyball, basketball, throwball and esports.">
-<meta name="theme-color" content="#F9E4D1">
-<script>
-(function(){
-  var d=document.documentElement,v=null;
-  try{v=localStorage.getItem('shore-theme')}catch(e){}
-  var h=new Date().getHours(),a=h>=6&&h<18?'day':'night';
-  var m=(v==='day'||v==='night')?v:'auto';
-  d.dataset.theme=m==='auto'?a:m;d.dataset.mode=m;
-})();
-</script>
-<link rel="icon" href="Assets/logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/sports.css">
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <title>SHORe Sports 2026 — Register | GITAM Visakhapatnam</title>
+
+  <meta name="theme-color" content="#050A22">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link rel="stylesheet" href="css/sports.css">
 </head>
+
 <body>
 
-<div id="scrollProgress" aria-hidden="true"></div>
-<canvas id="liquidCanvas" aria-hidden="true"></canvas>
-
-<nav id="nav"><div class="wrap"><a href="index.html" class="logo" aria-label="SHORe home"><img src="Assets/logo.png" width="420" height="420" onerror="this.onerror=null;this.src='Assets/logo%2727-3.png'" alt="SHORe Fest"></a><div class="links" id="links"><div class="dd"><button class="dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="ddm">Events <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1.5l5 5 5-5"/></svg></button><ul class="dd-menu" id="ddm"><li><a href="Sports.html" aria-current="page">Sports</a></li><li><a href="Cultural.html">Cultural</a></li><li><a href="Technical.html">Technical</a></li><li><a href="Management.html">Management</a></li></ul></div><a href="Artists.html">Artists</a><a href="Schedule.html">Schedule</a><a href="About.html">About Us</a><a href="Passes.html">Passes</a><a href="Signin.html" class="cta">Sign in</a></div><div class="nav-end"><button class="tg" id="tg" role="switch" aria-checked="false" aria-label="Switch theme" title="Day / Night"><span class="tg-l d">DAY</span><span class="tg-l n">NIGHT</span><span class="tg-k"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg></span></button><button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><i></i><i></i></button></div></div></nav>
-
-<div class="subpageTrail"><a href="index.html">SHORe</a><span>→</span><strong>Sports</strong></div><header class="hero">
-  <div class="heroimg" aria-hidden="true"></div>
-  <img class="sg" src="Assets/mascot/cheers.png" data-orig="SHORe%20Mascot%20poses/Gitphin%20Cheers.png" width="598" height="773" alt="" aria-hidden="true">
-
+<header class="hd site-header">
   <div class="wrap">
-    <div class="eyebrow mono">SHORe · 5th Edition · GITAM Visakhapatnam</div>
-    <h1>SHORe <span>Sports</span></h1>
-    <p class="lead">Inter-University Sports Championship · GITAM Visakhapatnam · Rushikonda</p>
-    <div class="pills" aria-label="Sports highlights">
-      <span class="pill">12 SPORTS</span>
-      <span class="pill">34 EVENTS</span>
-      <span class="pill">₹3.89L PRIZE POOL</span>
-      <span class="pill">18–20 DEC 2026</span>
-    </div>
-  </div>
-</header>
 
-<section class="stats wrap" aria-label="Sports at a glance">
-  <div class="stat"><b id="sEvents">34</b><span>Events</span></div>
-  <div class="stat"><b id="sSports">12</b><span>Sports</span></div>
-  <div class="stat"><b id="sVenues">7</b><span>Venues</span></div>
-  <div class="stat"><b id="sPrize">₹3.89L</b><span>Total prizes</span></div>
-</section>
+    <a href="index.html"
+       class="brand"
+       aria-label="Back to SHORe home">
 
-<main>
-  <section class="section">
-    <div class="wrap">
-      <div class="head reveal">
-        <div>
-          <div class="kicker mono">Choose your arena</div>
-          <h2>Play it your <em>way.</em></h2>
-        </div>
-        <p>From team championships to racket, track, mind and digital events — find your sport, division and entry details below.</p>
-      </div>
-
-      <div class="divisionSpotlight">
-        <button class="divisionHero menHero reveal" data-division="Men">
-          <span class="divisionArrow">↗</span>
-          <div class="divisionCopy"><small>DIVISION</small><strong>Men</strong><em id="menCount">25 events</em></div>
-        </button>
-        <button class="divisionHero womenHero reveal" data-division="Women">
-          <span class="divisionArrow">↗</span>
-          <div class="divisionCopy"><small>DIVISION</small><strong>Women</strong><em id="womenCount">8 events</em></div>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="toolbar" aria-label="Sports event filters">
-    <div class="wrap">
-      <div class="tools">
-        <label class="search">
-          <span class="mono" style="position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;">Search sports</span>
-          <input id="search" type="search" placeholder="Search sport, event, venue or ID…" autocomplete="off">
-        </label>
-        <div class="filters" id="filters" aria-label="Filter by sport"></div>
-      </div>
-      <div class="divisionFilters" aria-label="Filter by division" style="margin-top:.5rem;">
-        <button class="divisionFilter active" data-division="All">ALL DIVISIONS</button>
-        <button class="divisionFilter men" data-division="Men">MEN</button>
-        <button class="divisionFilter women" data-division="Women">WOMEN</button>
-        <button class="divisionFilter" data-division="Mixed">MIXED</button>
-        <button class="divisionFilter" data-division="Open">OPEN</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="events">
-    <div class="wrap">
-      <div class="resultline"><span>SHORe SPORTS 2026</span><span id="count">34 events</span></div>
-      <div id="groups" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:2rem;">
-    <div class="wrap">
-      <div class="head reveal">
-        <div>
-          <div class="kicker mono">Registration</div>
-          <h2>Find your <em>game.</em></h2>
-        </div>
-        <p>Registration details, deadlines and helpdesk information will be updated as the fest approaches. No real payment is processed on this prototype.</p>
-      </div>
-      <div class="divisionSpotlight">
-        <div class="divisionHero reveal" style="cursor:default;">
-          <div class="divisionCopy"><small>ENTRY FROM</small><strong>₹111</strong><em>Esports · team entry</em></div>
-        </div>
-        <div class="divisionHero reveal" style="cursor:default;">
-          <div class="divisionCopy"><small>CHAMPIONSHIP</small><strong>₹3.89L</strong><em>Total prize pool across the current event list</em></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <h4>SHORe Sports 2026</h4>
-        <p>Inter-University Sports Championship<br>GITAM Visakhapatnam · Rushikonda</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">SHORe Home</a></li>
-          <li><a href="#events">Sports &amp; Events</a></li>
-          <li><a href="Schedule.html">Schedule</a></li>
-          <li><a href="Passes.html">Passes</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Registration</h4>
-        <ul>
-          <li><a href="#events">Register now</a></li>
-          <li><span>Deadline TBC</span></li>
-          <li><span>Helpdesk TBC</span></li>
-          <li><a href="https://www.gitam.edu/">gitam.edu</a></li>
-        </ul>
-      </div>
-    </div>
-    <a href="index.html" class="logo" aria-label="Return to SHORe home">
-      <img class="flogo" src="Assets/logo.png" width="420" height="420" onerror="this.onerror=null;this.src='Assets/logo%2727-3.png'" alt="Return to SHORe">
+      <!-- YOUR ORIGINAL EMBEDDED SHORe/GITAM LOGO -->
+      <img
+        src="data:image/png;base64,..."
+        alt="GITAM Sports">
     </a>
-    <div class="legal">
-      <span>© 2026 SHORe Sports · GITAM Visakhapatnam</span>
-      <span>Registration prototype — no real payments · V1.0 draft</span>
-    </div>
-  </div>
-</footer>
 
-<div class="modalback" id="back" role="dialog" aria-modal="true" aria-labelledby="mt">
-  <div class="modal">
-    <div class="modalpic" id="pic">
-      <button class="close" id="close" aria-label="Close event details">×</button>
-    </div>
-    <div class="modalbody">
-      <div class="kicker mono" id="mk"></div>
-      <h3 id="mt"></h3>
-      <div class="details">
-        <div class="detail"><label>Division</label><strong id="dv"></strong></div>
-        <div class="detail"><label>Registration basis</label><strong id="bs"></strong></div>
-        <div class="detail"><label>Entry fee</label><strong id="fe"></strong></div>
-        <div class="detail"><label>Prize</label><strong id="pr"></strong></div>
-        <div class="detail"><label>Venue</label><strong id="ve"></strong></div>
-        <div class="detail"><label>Event ID</label><strong id="ei"></strong></div>
-      </div>
-      <div class="note">Official event information is presented from the current SHORe Sports master list. Rules, registration deadline and final helpdesk details will be added when released.</div>
-    </div>
-  </div>
-</div>
-
-<script src="JS/common.js"></script>
-<script src="JS/sports.js"></script>
-</body>
-</html>
+    ...
