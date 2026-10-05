@@ -1,35 +1,441 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport"
-        content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060A18">
 
-  <title>SHORe Sports 2026 — Register | GITAM Visakhapatnam</title>
-
-  <meta name="theme-color" content="#050A22">
+  <title>SHORe 5th Edition — Sports</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="css/sports.css">
 </head>
 
 <body>
 
-<header class="hd site-header">
-  <div class="wrap">
+<div id="scrollProgress"></div>
 
-    <a href="index.html"
-       class="brand"
-       aria-label="Back to SHORe home">
+<canvas id="liquidCanvas" aria-hidden="true"></canvas>
 
-      <!-- YOUR ORIGINAL EMBEDDED SHORe/GITAM LOGO -->
-      <img
-        src="data:image/png;base64,..."
-        alt="GITAM Sports">
+<nav>
+  <div class="wrap nav">
+
+    <a class="brand" href="#">
+      <span class="logo">S</span>
+      <span>SHORe</span>
     </a>
 
-    ...
+    <span class="navmeta">
+      5TH EDITION · SPORTS · 18—20 DEC 2026
+    </span>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+
+  <div class="heroimg"></div>
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      GITAM VISAKHAPATNAM · SPORTS VERTICAL
+    </div>
+
+    <h1>
+      PLAY.
+      <span>COMPETE.</span>
+      SHORE.
+    </h1>
+
+    <p class="lead">
+      Find your event. Know the essentials. Step into the sports line-up of SHORe 5th Edition.
+    </p>
+
+    <div class="pills">
+
+      <span class="pill">
+        18—20 DECEMBER 2026
+      </span>
+
+      <span class="pill">
+        34 EVENTS
+      </span>
+
+      <span class="pill">
+        ₹4L TOTAL PRIZES
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="wrap">
+
+  <div class="stats">
+
+    <div class="stat">
+      <b>34</b>
+      <span>Events</span>
+    </div>
+
+    <div class="stat">
+      <b>12</b>
+      <span>Sports / Formats</span>
+    </div>
+
+    <div class="stat">
+
+      <b
+        data-count="400000"
+        data-prefix="₹"
+        data-suffix="L"
+        data-scale="100000"
+      >
+        ₹4L
+      </b>
+
+      <span>Total Prize Pool</span>
+
+    </div>
+
+    <div class="stat">
+      <b>7</b>
+      <span>Venue IDs</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<section class="section wrap">
+
+  <div class="head">
+
+    <div>
+
+      <div class="kicker">
+        THE EVENT LINE-UP
+      </div>
+
+      <h2>
+        Find your
+        <br>
+        game.
+      </h2>
+
+    </div>
+
+    <p>
+      Browse the official SHORe 2026 sports event master list.
+      Search or filter by sport or division, then open any event
+      for its registration basis, entry fee, prize pool and venue.
+    </p>
+
+  </div>
+
+
+  <div
+    class="divisionSpotlight"
+    aria-label="Division overview"
+  >
+
+    <button
+      type="button"
+      class="divisionHero menHero"
+      data-division="Men"
+    >
+
+      <span class="divisionOrb"></span>
+
+      <span class="divisionCopy">
+
+        <small>COMPETE</small>
+
+        <strong>
+          MEN'S EVENTS
+        </strong>
+
+        <em id="menCount">
+          0 events
+        </em>
+
+      </span>
+
+      <span class="divisionArrow">
+        ↗
+      </span>
+
+    </button>
+
+
+    <button
+      type="button"
+      class="divisionHero womenHero"
+      data-division="Women"
+    >
+
+      <span class="divisionOrb"></span>
+
+      <span class="divisionCopy">
+
+        <small>COMPETE</small>
+
+        <strong>
+          WOMEN'S EVENTS
+        </strong>
+
+        <em id="womenCount">
+          0 events
+        </em>
+
+      </span>
+
+      <span class="divisionArrow">
+        ↗
+      </span>
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<div class="toolbar">
+
+  <div class="wrap tools">
+
+    <div class="search">
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Search events, sports or divisions…"
+      >
+
+    </div>
+
+    <div
+      class="filters"
+      id="filters"
+    ></div>
+
+
+    <div
+      class="divisionFilters"
+      id="divisionFilters"
+      aria-label="Filter by division"
+    >
+
+      <button
+        type="button"
+        class="divisionFilter active"
+        data-division="All"
+      >
+        ALL
+      </button>
+
+      <button
+        type="button"
+        class="divisionFilter men"
+        data-division="Men"
+      >
+        MEN
+      </button>
+
+      <button
+        type="button"
+        class="divisionFilter women"
+        data-division="Women"
+      >
+        WOMEN
+      </button>
+
+      <button
+        type="button"
+        class="divisionFilter"
+        data-division="Mixed"
+      >
+        MIXED
+      </button>
+
+      <button
+        type="button"
+        class="divisionFilter"
+        data-division="Open"
+      >
+        OPEN
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<section
+  class="section wrap"
+  style="padding-top:28px"
+>
+
+  <div class="resultline">
+
+    <span id="count"></span>
+
+    <span>
+      SHORE 2026 MASTER LIST
+    </span>
+
+  </div>
+
+  <div id="groups"></div>
+
+</section>
+
+
+<div
+  class="modalback"
+  id="back"
+>
+
+  <div class="modal">
+
+    <div
+      class="modalpic"
+      id="pic"
+    >
+
+      <button
+        class="close"
+        id="close"
+      >
+        &times;
+      </button>
+
+    </div>
+
+
+    <div class="modalbody">
+
+      <div
+        class="kicker"
+        id="mk"
+      ></div>
+
+      <h3 id="mt"></h3>
+
+
+      <div class="details">
+
+        <div class="detail">
+
+          <label>
+            Division
+          </label>
+
+          <strong id="dv"></strong>
+
+        </div>
+
+
+        <div class="detail">
+
+          <label>
+            Registration
+          </label>
+
+          <strong id="bs"></strong>
+
+        </div>
+
+
+        <div class="detail">
+
+          <label>
+            Entry Fee
+          </label>
+
+          <strong id="fe"></strong>
+
+        </div>
+
+
+        <div class="detail">
+
+          <label>
+            Total Prize
+          </label>
+
+          <strong id="pr"></strong>
+
+        </div>
+
+
+        <div class="detail">
+
+          <label>
+            Venue
+          </label>
+
+          <strong id="ve"></strong>
+
+        </div>
+
+
+        <div class="detail">
+
+          <label>
+            Event ID
+          </label>
+
+          <strong id="ei"></strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="note">
+
+        Rules, schedule, registration link and additional participant
+        instructions can be plugged into this event panel once those
+        official details are finalized.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="wrap">
+
+    SHORe 5th Edition · GITAM Visakhapatnam · 18—20 December 2026
+
+  </div>
+
+</footer>
+
+
+<script src="JS/sports.js"></script>
+
+</body>
+</html>
